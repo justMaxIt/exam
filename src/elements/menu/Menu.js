@@ -1,23 +1,27 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import style from "./Menu.module.css"
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import starship from "./starship.png"
 
 
 function Menu() {
   return(
   <div className={style.menu}>
-      <div>menu</div>
-      <div class="dropdown" style={{
+      <div className={style.leftMenuItem}>
+        {/* <div className={style.starship}> */}
+          <img src={starship} alt="starship" />
+        <h5>Movies</h5>
+      </div>
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style={{
         border: "1px solid white"
       }}>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     My account
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Action</a>
     <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
+    <a class="dropdown-item" href="#">Something else</a>
   </div>
 </div>
   </div>)
