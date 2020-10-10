@@ -8,9 +8,11 @@ function Menu() {
   return(
   <div className={style.menu}>
       <div>menu</div>
-      <div class="dropdown">
+      <div class="dropdown" style={{
+        border: "1px solid white"
+      }}>
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
+    My account
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="#">Action</a>

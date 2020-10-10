@@ -1,4 +1,9 @@
 .menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 80px;
   background-color: #474D59;
   height: 70px;
+  grid-template-rows: 1fr  1fr;
+  grid-template-columns: 1fr;
 }
