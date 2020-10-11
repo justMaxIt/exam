@@ -12,6 +12,7 @@ function Menu() {
           <img src={starship} alt="starship" />
         <h5>Movies</h5>
       </div>
+      <div className={style.rightMenuItem}>
       <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style={{
         border: "1px solid white"
@@ -23,7 +24,8 @@ function Menu() {
     <a class="dropdown-item" href="#">Another action</a>
     <a class="dropdown-item" href="#">Something else</a>
   </div>
-</div>
+    </div>
+    </div>
   </div>)
   // let location = useLocation();
 
