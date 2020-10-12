@@ -33,7 +33,7 @@ function Menu() {
   //     <Link className={location.pathname === "/" ? "active" : ""} to="/">
   //       Main
   //     </Link>
-      {/* <Link
+      /* <Link
         className={location.pathname === "/modal" ? "active" : ""}
         to="/modal"
       >
@@ -44,7 +44,7 @@ function Menu() {
         to="/favorite"
       >
         Favorite
-      </Link> */}
+      </Link> */
    
  
 }

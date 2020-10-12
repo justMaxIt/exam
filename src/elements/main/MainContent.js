@@ -1,6 +1,5 @@
 import React, { useState, useEffect  } from "react";
 import style from "./Main.module.css"
-// import PostPagination from "./Pagination";
 import ReactDOM from "react-dom";
 import Pagination from "react-js-pagination";
 
@@ -9,8 +8,8 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function MainContent() {
 const [data, setData] = useState([]);
-  const [page, setPage] = useState(1)
-    const [activePage, setActivePage] = useState(1);
+const [page, setPage] = useState(1)
+const [activePage, setActivePage] = useState(1);
 
   useEffect(() => {
     fetch(`${api}${page}`)
@@ -30,9 +29,8 @@ const [data, setData] = useState([]);
      <a  href="#"><ul className={style.postersContent}>{posterPath.map(el => <li><img src={el} alt="img" /></li>)} </ul></a>
     </div>
     <div className={style.pagination}>
-      
-      
-      <Pagination
+        <Pagination
+        hideDisabled
         itemClass="page-item"
         linkClass="page-link"
         prevPageText='prev'
@@ -40,26 +38,15 @@ const [data, setData] = useState([]);
         firstPageText='first'
         lastPageText='last'
         activePage={activePage}
-        itemsCountPerPage={5}
+        itemsCountPerPage={1}
         totalItemsCount={64}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={3}
         onChange={(page) => {
           setPage(page)
           setActivePage(page)
-        }}
-        />
-
-
-
-
-
-
-
-
-      
-      </div>
-    
-    </div>;
+        }}    />
+     </div>
+       </div>;
 }
 ReactDOM.render(<Pagination />, document.getElementById("root"));
 export default MainContent;

@@ -35,6 +35,13 @@
   justify-content: center;
 }
 
+.pagination {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  color: #474D59
+}
+
 @media (max-width: 640px) {
   .postersContent {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
