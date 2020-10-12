@@ -21,8 +21,7 @@ function App() {
           <FavoritePage />
         </Route> */}
         <Route path="*">
-          <Menu />
-          <div>Path error: 404</div>
+                    <div>Path error: 404</div>
         </Route>
       </Switch>
     </Router>
