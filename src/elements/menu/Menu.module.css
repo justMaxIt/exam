@@ -4,7 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "left . . . right";
-  padding: 15px 30px;
+  padding: 15px 25px;
   background-color: #474D59;
   height: 70px;
 }
@@ -35,7 +35,7 @@
   align-items: flex-start;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 640px) {
   .rightMenuItem .articleDDMenu {
     font-size: 0;
   }

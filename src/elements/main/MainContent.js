@@ -22,9 +22,9 @@ const [page, setPage] = useState(1)
   return <div className={style.mainContent}>
    
     <div className={style.articleContent}>
-      Latest Releases
+      <h4>Latest Releases</h4>
     </div>
-    <div >
+    <div>
      
         
     
@@ -32,7 +32,7 @@ const [page, setPage] = useState(1)
 
 
     </div>
-    
+    <div>Pagination</div>
     
     </div>;
 }
