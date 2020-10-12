@@ -1,7 +1,7 @@
 import React from "react";
 // import { Link, useLocation } from "react-router-dom";
 import style from "./Menu.module.css"
-import starship from "./starship.png"
+import deathstar from "./deathstar.png"
 
 
 function Menu() {
@@ -9,7 +9,7 @@ function Menu() {
   <div className={style.menu}>
       <div className={style.leftMenuItem}>
         
-          <img src={starship} alt="starship" />
+          <img src={deathstar} alt="deathstar" />
         <h5>Movies</h5>
       </div>
       <div className={style.rightMenuItem}>
