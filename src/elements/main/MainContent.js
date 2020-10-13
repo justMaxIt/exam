@@ -1,32 +1,40 @@
-import React, { useState, useEffect  } from "react";
+import React from "react";
 import style from "./Main.module.css"
 import ReactDOM from "react-dom";
 import Pagination from "react-js-pagination";
+import { NavLink } from "react-router-dom";
 
-const api = "https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page="
-const posterUrl = "http://image.tmdb.org/t/p/w200" 
 
-function MainContent() {
-const [data, setData] = useState([]);
-const [page, setPage] = useState(1)
-const [activePage, setActivePage] = useState(1);
 
-  useEffect(() => {
-    fetch(`${api}${page}`)
-      .then((res) => res.json())
-      .then((res) => setData(res.results))
-      .catch((error) => console.error(error));
-  }, [page]);
+function MainContent(props) {
+  let { data, setPage, activePage, setActivePage} = props
+
+  const posterUrl = "http://image.tmdb.org/t/p/w200"
+  // let posterPath = data?.map(el => posterUrl + el.poster_path)
+  let linkId=data?.map(el => el.id)
+  // console.log(data, linkId)
+  let alert = () => {
+    console.log("help")
+  }
+
+  return (
   
-  let posterPath = data?.map(el => posterUrl + el.poster_path)
-
-  // console.log(data, posterPath)
-  return <div className={style.mainContent}>
+    <div className={style.mainContent}>
+      
        <div className={style.articleContent}>
       <h4>Latest Releases</h4>
     </div>
     <div>
-     <a  href="#"><ul className={style.postersContent}>{posterPath.map(el => <li><img src={el} alt="img" /></li>)} </ul></a>
+    
+        <NavLink to="/modal" >
+          <ul className={style.postersContent}>
+            {data.map((el) =>
+              (<li key={el.id}>
+                <img src={posterUrl + el.poster_path} alt="no poster" onClick={alert} /></li>))}
+          </ul>
+          
+        </NavLink>
+        
     </div>
     <div className={style.pagination}>
         <Pagination
@@ -46,7 +54,8 @@ const [activePage, setActivePage] = useState(1);
           setActivePage(page)
         }}    />
      </div>
-       </div>;
+    </div>)
+  
 }
 ReactDOM.render(<Pagination />, document.getElementById("root"));
 export default MainContent;
