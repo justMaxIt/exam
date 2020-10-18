@@ -35,7 +35,7 @@
   align-items: flex-start;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 620px) {
   .rightMenuItem .articleDDMenu {
     font-size: 0;
   }

@@ -12,18 +12,20 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 function MainContent(props) {
 let { data, setPage, activePage, setActivePage } = props
   const [filmData, setFilmData] = useState(null)
-  const [isVisable, setIsVisable] =  useState(false)
+  const [isVisable, setIsVisable] = useState(false)
+  const [FilmIndex, setFilmIndex] = useState(null)
   // let posterPath = data?.map(el => posterUrl + el.poster_path)
   // let linkId=data?.map(el => el.id)
   // console.log(data, linkId)
 
   
-  let funcOnPost = (el) => {
+  let funcOnPost = (el, ind) => {
+
     setFilmData(el)
     setIsVisable(true)
-    
+    setFilmIndex(ind)
 }
-console.log(filmData)
+console.log(filmData, FilmIndex)
   
   if (isVisable) {
    
@@ -31,8 +33,12 @@ console.log(filmData)
     return (
       <div className={style.modal}>
         <Modal
+          setFilmIndex={setFilmIndex}
           setIsVisable={setIsVisable}
-        
+          setFilmData={setFilmData}
+          data={props.data}
+          filmData={filmData}
+        FilmIndex={FilmIndex}
         /> </div>)
   }
    else {
@@ -48,7 +54,7 @@ console.log(filmData)
           <ul className={style.postersContent}>
             {data.map((el, ind) =>
               (<li key={el.id} >
-                <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el)} /></li>))}
+                <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el, ind)} /></li>))}
           </ul>
         </div>
       

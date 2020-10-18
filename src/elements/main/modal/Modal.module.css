@@ -1,6 +1,4 @@
-.overlay {
+.desktop {
   color: green;
-  /* margin: 100;
-  z-index: 999999999; */
   background-color: violet;
 }

@@ -4,9 +4,7 @@ import style from "./../../main/modal/Modal.module.css"
 
 
 function ModalMobile(props) {
-  const { setIsVisable
-  } = props;
- 
+ const { setIsVisable, setFilmData, setFilmIndex, data, filmData, FilmIndex } = props;
   return (
     <div>
       Mobile content
