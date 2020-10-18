@@ -49,3 +49,8 @@
     width: 150px;
   }
 }
+
+.modal overlay {
+  z-index: 999999999;
+  background-color: violet;
+}

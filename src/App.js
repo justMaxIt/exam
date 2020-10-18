@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <Menu />
+        
           <MainPage />
         </Route>
         <Route path="/modal">

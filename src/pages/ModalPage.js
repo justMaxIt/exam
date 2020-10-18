@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import ModalContent from "../elements/modal/ModalContent";
+
 
 
 
@@ -25,7 +25,7 @@ function ModalPage() {
 //   console.log(data)
     return <div className="modal-page">
       jhfyjcfgyuibj
-    <ModalContent />
+  
     {/* //   data={data}
     //   activePage={activePage}
     //   setActivePage={setActivePage}

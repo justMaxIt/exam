@@ -5,6 +5,8 @@ import deathstar from "./deathstar.png"
 
 
 function Menu() {
+
+  
   return(
   <div className={style.menu}>
       <div className={style.leftMenuItem}>
