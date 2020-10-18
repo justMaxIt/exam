@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Main.module.css"
 import Pagination from "react-js-pagination";
-import Modal from "./Modal";
+import Modal from "./modal/Modal";
 import Menu from "../menu/Menu";
 
 
@@ -26,13 +26,16 @@ let { data, setPage, activePage, setActivePage } = props
 console.log(filmData)
   
   if (isVisable) {
+   
+
     return (
       <div className={style.modal}>
         <Modal
           setIsVisable={setIsVisable}
         
         /> </div>)
-  } else {
+  }
+   else {
     return (
       <div>
         <Menu />
