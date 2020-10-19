@@ -1,6 +1,51 @@
 .desktop {
-  color: green;
-  /* background-color: violet; */
-  /* background-image: url("http://image.tmdb.org/t/p/w200/aKx1ARwG55zZ0GpRvU2WrGrCG9o.jpg"); */
+  z-index: 99;
+  color: white;
+}
 
+.backgroundImage {
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 0;
+  right: 0;
+  position: absolute;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index: 1; */
+}
+
+/* .backgroundImageBlur {
+  background-repeat: no-repeat;
+  position: fixed;
+  left: 0;
+  right: 0;
+  position: absolute;
+  -moz-background-size: 100%;
+  -webkit-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: cover;
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  z-index: 1;
+} */
+
+.modCont {
+  text-align: center;
+  z-index: 9;
+  position: relative;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
 }
