@@ -10,7 +10,7 @@ const backgroundImage = posterUrl + filmData.poster_path
   return (<div className={style.desktopPage}>
     <Menu />
     <div className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-    <div className={style.desktopContent}>
+    <div className={style.modContent}>
      
       <div className={style.topButtons}>
       <button onClick={() => setIsVisable(false)}>Back to list</button>
@@ -37,7 +37,7 @@ const backgroundImage = posterUrl + filmData.poster_path
       <div>Score: {filmData.vote_average}</div>
       <div style={{borderLeft: "2px solid rgba(255, 255, 255, 0.3)", borderRight: "2px solid rgba(255, 255, 255, 0.3)" }}>Rating: { (filmData.adult === true)? "R" : "Pg"}</div>
       <div>Release Date: {filmData.release_date}</div></div>
-<div style={{borderTop: "2px solid rgba(255, 255, 255, 0.3)", borderBottom: "2px solid rgba(255, 255, 255, 0.3)", margin: "5%", marginRight: "0", padding: "3% 0"}}>{filmData.overview}</div>
+<div className={style.descriptionFilm}>{filmData.overview}</div>
 </div></div>
     </div>
     
