@@ -1,25 +1,20 @@
-.desktop {
-  z-index: 99;
-  color: white;
-}
-
 .backgroundImage {
   background-repeat: no-repeat;
-  position: fixed;
+  background-size: cover;
+  -webkit-background-size: 100%;
+  background-position: center center;
   left: 0;
   right: 0;
-  position: absolute;
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  /* -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);
-  z-index: 1; */
-}
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+  z-index: -1;
+ }
 
 /* .backgroundImageBlur {
   background-repeat: no-repeat;
@@ -27,9 +22,7 @@
   left: 0;
   right: 0;
   position: absolute;
-  -moz-background-size: 100%;
-  -webkit-background-size: 100%;
-  -o-background-size: 100%;
+ 
   background-size: cover;
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
@@ -40,12 +33,30 @@
 } */
 
 .modCont {
-  text-align: center;
-  z-index: 9;
-  position: relative;
+ margin: 0;
+  /* z-index: 9; */
+  /* -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px); */
+}
+
+.desktopPage {
+  color: gold;
+  /* -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px); */
+}
+
+.desktopContent {
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
   -o-filter: blur(0px);
   -ms-filter: blur(0px);
   filter: blur(0px);
+  /* z-index: 9999999; */
+  color: white;
 }

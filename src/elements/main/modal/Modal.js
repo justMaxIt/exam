@@ -26,10 +26,12 @@ const Modal = (props) => {
   const { setIsVisable, setFilmData, setFilmIndex, data, filmData, FilmIndex } = props;
   const { width } = useViewport();
   const breakpoint = 620;
-  const backgroundImage = posterUrl + filmData.poster_path
+  // const backgroundImage = posterUrl + filmData.poster_path
 
 
-  return (<div className={style.backgroundImage }  style={{ backgroundImage: `url(${backgroundImage})`}}>
+  return (<div
+    // className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}
+  >
     <div className={style.backgroundImageBlur}></div>
     <div className={style.modCont}>
      
