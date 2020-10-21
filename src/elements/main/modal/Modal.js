@@ -23,7 +23,7 @@ const [width, setWidth] = React.useState(window.innerWidth);
 
 
 const Modal = (props) => {
-  const { setIsVisable, setFilmData, setFilmIndex, data, filmData, FilmIndex } = props;
+  const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, page, activePage, filmData, filmIndex } = props;
   const { width } = useViewport();
   const breakpoint = 620;
   // const backgroundImage = posterUrl + filmData.poster_path
@@ -41,15 +41,19 @@ const Modal = (props) => {
         setFilmData={props.setFilmData}
         setFilmIndex={props.setFilmIndex}
         data={props.data}
-        FilmIndex={props.FilmIndex}
+        filmIndex={props.filmIndex}
         filmData={props.filmData}
       /> :
       <ModalDesktop
         setIsVisable={props.setIsVisable}
         setFilmData={props.setFilmData}
-        setFilmIndex={props.setFilmIndex}
-        data={props.data}
-        FilmIndex={props.FilmIndex}
+          setFilmIndex={props.setFilmIndex}
+          setActivePage={props.setActivePage}
+          setPage={props.setPage}
+          data={props.data}
+          page={props.page}
+          activePage={props.activePage}
+        filmIndex={props.filmIndex}
         filmData={props.filmData}
       />}
   </div></div>

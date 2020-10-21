@@ -10,10 +10,9 @@ import Menu from "../menu/Menu";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function MainContent(props) {
-let { data, setPage, activePage, setActivePage } = props
-  const [filmData, setFilmData] = useState(null)
-  const [isVisable, setIsVisable] = useState(false)
-  const [FilmIndex, setFilmIndex] = useState(null)
+let {setPage, activePage, setActivePage,  data, page, filmData, 
+setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex } = props
+ 
   // let posterPath = data?.map(el => posterUrl + el.poster_path)
   // let linkId=data?.map(el => el.id)
   // console.log(data, linkId)
@@ -25,7 +24,7 @@ let { data, setPage, activePage, setActivePage } = props
     setIsVisable(true)
     setFilmIndex(ind)
 }
-console.log(filmData, FilmIndex)
+// console.log(data)
   
   if (isVisable) {
    
@@ -36,9 +35,14 @@ console.log(filmData, FilmIndex)
           setFilmIndex={setFilmIndex}
           setIsVisable={setIsVisable}
           setFilmData={setFilmData}
-          data={props.data}
-          filmData={filmData}
-        FilmIndex={FilmIndex}
+          setPage={setPage}
+          setActivePage={setActivePage}
+          data={props.data.results}
+          page={props.page}
+           activePage={props.activePage}
+          filmData={props.filmData}
+          filmIndex={props.filmIndex}
+          
         /> </div>)
   }
    else {
@@ -52,7 +56,7 @@ console.log(filmData, FilmIndex)
         </div>
         <div>
           <ul className={style.postersContent}>
-            {data.map((el, ind) =>
+            {props.data.results?.map((el, ind) =>
               (<li key={el.id} >
                 <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el, ind)} /></li>))}
           </ul>
@@ -69,11 +73,14 @@ console.log(filmData, FilmIndex)
             lastPageText='last'
             activePage={activePage}
             itemsCountPerPage={1}
-            totalItemsCount={64}
+            totalItemsCount={data.total_pages}
             pageRangeDisplayed={3}
-            onChange={(page) => {
-              setPage(page)
-              setActivePage(page)
+              onChange={(page) => {
+                if (page !== data.total_pages) {
+                  setPage(page)
+                  setActivePage(page)
+                }
+                else { setPage(page -1) }
             }} />
         </div>
      

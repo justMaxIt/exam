@@ -4,9 +4,10 @@ import style from "./Modal.module.css"
 
 
 function ModalDesktop(props) {
-const { setIsVisable, setFilmData,setFilmIndex, data, filmData, FilmIndex } = props;
+const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
 const posterUrl = "http://image.tmdb.org/t/p/w200"
-const backgroundImage = posterUrl + filmData.poster_path
+  const backgroundImage = posterUrl + filmData.poster_path
+
   return (<div className={style.desktopPage}>
     <Menu />
     <div className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
@@ -14,11 +15,26 @@ const backgroundImage = posterUrl + filmData.poster_path
      
       <div className={style.topButtons}>
       <button onClick={() => setIsVisable(false)}>Back to list</button>
-      <button onClick={() => {
-        if (FilmIndex <= 18) {
-          setFilmIndex(FilmIndex + 1);
-          setFilmData(data[FilmIndex + 1])
-        }
+        <button onClick={() => {
+         
+          if (filmIndex <= 19) {
+            setFilmIndex(filmIndex + 1);
+            setFilmData(data[filmIndex + 1])
+          }
+        //   if (filmIndex === 18) {
+        
+        //      setPage(()=> page + 1);
+        // }
+          
+          // if (filmIndex === 19) {
+          //   setPage(page + 1);
+          //           setFilmData(data[0]);
+            // setActivePage(activePage + 1)
+                        
+            // }
+
+          console.log(data, filmIndex)
+        
       }}>Next Movie</button>
       </div>
 
