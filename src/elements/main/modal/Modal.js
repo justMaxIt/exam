@@ -3,7 +3,7 @@ import ModalDesktop from "./ModalDesktop";
 import ModalMobile from "./ModalMobile";
 import style from "./Modal.module.css"
 
-  const posterUrl = "http://image.tmdb.org/t/p/w400"
+
   
 export const useViewport = () => {
 const [width, setWidth] = React.useState(window.innerWidth);
@@ -17,7 +17,7 @@ const [width, setWidth] = React.useState(window.innerWidth);
 
 
 const Modal = (props) => {
-  const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, page, activePage, filmData, filmIndex} = props;
+  // const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, page, activePage, filmData, filmIndex} = props;
   const { width } = useViewport();
   const breakpoint = 620;
 

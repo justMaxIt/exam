@@ -1,13 +1,13 @@
-import React, {useState, useEffect} from "react";
+// import React, {useState, useEffect} from "react";
 
 
 
 
-const api = "https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page="
+// const api = "https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page="
 
 
 
-function ModalPage() {
+// function ModalPage() {
 //     let { data } = props;
 // const [page, setPage] = useState(1)
 // const [activePage, setActivePage] = useState(1);
@@ -23,15 +23,15 @@ function ModalPage() {
 
 
 //   console.log(data)
-    return <div className="modal-page">
-      jhfyjcfgyuibj
+//     return <div className="modal-page">
+//       jhfyjcfgyuibj
   
-    {/* //   data={data}
-    //   activePage={activePage}
-    //   setActivePage={setActivePage}
-    //   setPage={setPage} */}
+//     {/* //   data={data}
+//     //   activePage={activePage}
+//     //   setActivePage={setActivePage}
+//     //   setPage={setPage} */}
     
-  </div>;
-}
+//   </div>;
+// }
 
-export default ModalPage;
+// export default ModalPage;

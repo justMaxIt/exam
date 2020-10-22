@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./elements/menu/Menu";
 import MainPage from "./pages/MainPage";
-import ModalPage from "./pages/ModalPage";
+// import ModalPage from "./pages/ModalPage";
 
 function App() {
   return (
@@ -14,10 +14,10 @@ function App() {
         
           <MainPage />
         </Route>
-        <Route path="/modal">
+        {/* <Route path="/modal">
           <Menu />
           <ModalPage />
-        </Route>
+        </Route> */}
         {/* <Route path="/favorite">
           <Menu />
           <FavoritePage />

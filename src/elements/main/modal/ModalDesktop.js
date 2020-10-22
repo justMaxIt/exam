@@ -3,14 +3,13 @@ import Menu from "../../menu/Menu";
 import style from "./Modal.module.css"
 
 
-
-
 function ModalDesktop(props) {
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
   const posterUrl = "http://image.tmdb.org/t/p/w200"
   
   const backgroundImage = posterUrl + filmData.poster_path
-  
+  const totalResult = data.total_results
+
   return (<div className={style.desktopPage}>
     <Menu />
     <div className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
@@ -26,7 +25,7 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, f
         }
         }>Back to list</button>
         
-        <button onClick={() => {
+        <button onClick={(e) => {
             if (filmIndex <= 18) {
             setFilmIndex(filmIndex + 1);
             setFilmData(data.results[filmIndex + 1])
@@ -35,15 +34,17 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, f
             setPage(page + 1);
           }
           if (filmIndex === 19) {
-                        setFilmIndex(0);
+            setFilmIndex(0);
             setFilmData(data.results[0]);
             setActivePage(activePage + 1)
           }
-//           if (data.page === data.total_pages) {
-//   return null
-// }
+       if (data.results[data.results.length - 1] === filmData) {
+         setFilmIndex(filmIndex);
+         setFilmData(data.results[filmIndex]);
+         e.target.style.visibility = 'hidden'
+}
 
-           console.log(data)
+           console.log(data, filmData, filmIndex)
         }}>Next Movie</button>
        
       </div>
