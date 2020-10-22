@@ -6,34 +6,23 @@ import { Store } from "./Store";
 const api = "https://api.themoviedb.org/3/movie/now_playing?api_key=ebea8cfca72fdff8d2624ad7bbf78e4c&language=en-US&page="
 
 
-
 function MainPage(props) {
-const [data, setData] = useState({});
+const [data, setData] = useState({})
 const [page, setPage] = useState(1)
-const [activePage, setActivePage] = useState(1);
- const [filmData, setFilmData] = useState(null)
-  const [isVisable, setIsVisable] = useState(false)
-  const [filmIndex, setFilmIndex] = useState(null)
+const [activePage, setActivePage] = useState(1)
+const [filmData, setFilmData] = useState(null)
+const [isVisable, setIsVisable] = useState(false)
+const [filmIndex, setFilmIndex] = useState(null)
+// const [lastFilmClick, setLastFilmClick] = useState(false)
 
   useEffect(() => {
-      if (filmIndex === 20) {
-      setPage(page + 1);
-      setFilmIndex(0);
-      setFilmData(data[0]);
-      setActivePage(activePage + 1)
-    }
-
     fetch(`${api}${page}`)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((error) => console.error(error));
-    
+      }, [page]);
+    // console.log(data)
   
-  }, [page, activePage, filmIndex]);
-  
-  
-
-console.log(data)
   return <div className="main-page">
       <MainContent
       data={data}
@@ -47,6 +36,7 @@ isVisable={isVisable}
       setIsVisable={setIsVisable}
       filmIndex={filmIndex}
       setFilmIndex={setFilmIndex}
+
     />
   </div>;
 }

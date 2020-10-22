@@ -3,39 +3,49 @@ import Menu from "../../menu/Menu";
 import style from "./Modal.module.css"
 
 
+
+
 function ModalDesktop(props) {
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
-const posterUrl = "http://image.tmdb.org/t/p/w200"
+  const posterUrl = "http://image.tmdb.org/t/p/w200"
+  
   const backgroundImage = posterUrl + filmData.poster_path
-
+  
   return (<div className={style.desktopPage}>
     <Menu />
     <div className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
     <div className={style.modContent}>
      
       <div className={style.topButtons}>
-      <button onClick={() => setIsVisable(false)}>Back to list</button>
         <button onClick={() => {
-         
-          if (filmIndex <= 19) {
-            setFilmIndex(filmIndex + 1);
-            setFilmData(data[filmIndex + 1])
+          if (filmIndex === 19) {
+            setPage(page - 1)
+            setIsVisable(false)
           }
-        //   if (filmIndex === 18) {
+          else { setIsVisable(false) }
+        }
+        }>Back to list</button>
         
-        //      setPage(()=> page + 1);
-        // }
-          
-          // if (filmIndex === 19) {
-          //   setPage(page + 1);
-          //           setFilmData(data[0]);
-            // setActivePage(activePage + 1)
-                        
-            // }
+        <button onClick={() => {
+            if (filmIndex <= 18) {
+            setFilmIndex(filmIndex + 1);
+            setFilmData(data.results[filmIndex + 1])
+          }
+          if (filmIndex === 18) {
+            setPage(page + 1);
+          }
+          if (filmIndex === 19) {
+                        setFilmIndex(0);
+            setFilmData(data.results[0]);
+            setActivePage(activePage + 1)
+          }
+//           if (data.page === data.total_pages) {
+//   return null
+// }
 
-          console.log(data, filmIndex)
-        
-      }}>Next Movie</button>
+           console.log(data)
+        }}>Next Movie</button>
+       
       </div>
 
 

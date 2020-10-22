@@ -1,10 +1,9 @@
 import React from "react";
-import Menu from "../../menu/Menu";
 import style from "./Modal.module.css"
 
 
 function ModalMobile(props) {
- const { setIsVisable, setFilmData,setFilmIndex, data, filmData, filmIndex } = props;
+const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 const backgroundImage = posterUrl + filmData.poster_path
   return ( <div className={style.mobilePage}>
@@ -13,13 +12,28 @@ const backgroundImage = posterUrl + filmData.poster_path
     
     <div className={style.modContent}>
           <div className={style.topButtons}>
-        <button onClick={() => setIsVisable(false)}>Back</button>
-      <button onClick={() => {
-        if (filmIndex <= 18) {
-          setFilmIndex(filmIndex + 1);
-          setFilmData(data[filmIndex + 1])
+    <button onClick={() => {
+          if (filmIndex === 19) {
+            setPage(page - 1)
+            setIsVisable(false) }
+          else { setIsVisable(false) }
         }
-      }}>Next</button>
+        }>Back to list</button>
+        
+        <button onClick={() => {
+            if (filmIndex <= 18) {
+            setFilmIndex(filmIndex + 1);
+            setFilmData(data.results[filmIndex + 1])
+          }
+          if (filmIndex === 18) {
+            setPage(page + 1);
+          }
+          if (filmIndex === 19) {
+                        setFilmIndex(0);
+            setFilmData(data.results[0]);
+            setActivePage(activePage + 1)
+          }
+          }}>Next Movie</button>
       </div>
       
        {/* <div className={style.mobileImg}> */}

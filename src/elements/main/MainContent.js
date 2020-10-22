@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React  from "react";
 import style from "./Main.module.css"
 import Pagination from "react-js-pagination";
 import Modal from "./modal/Modal";
 import Menu from "../menu/Menu";
 
 
-
-
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function MainContent(props) {
-let {setPage, activePage, setActivePage,  data, page, filmData, 
-setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex } = props
+let {setPage, activePage, setActivePage, data, page, filmData, 
+setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex} = props
  
   // let posterPath = data?.map(el => posterUrl + el.poster_path)
   // let linkId=data?.map(el => el.id)
@@ -19,10 +17,16 @@ setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex } = props
 
   
   let funcOnPost = (el, ind) => {
-
-    setFilmData(el)
-    setIsVisable(true)
-    setFilmIndex(ind)
+    if (ind === 19) {
+      setPage(page+1)
+      // setFilmData(el)
+      // setIsVisable(true)
+      // setFilmIndex(ind)
+    }
+    if(ind <= 19) {
+      setFilmData(el)
+      setIsVisable(true)
+      setFilmIndex(ind)}
 }
 // console.log(data)
   
@@ -37,13 +41,12 @@ setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex } = props
           setFilmData={setFilmData}
           setPage={setPage}
           setActivePage={setActivePage}
-          data={props.data.results}
+          data={props.data}
           page={props.page}
-           activePage={props.activePage}
+          activePage={props.activePage}
           filmData={props.filmData}
           filmIndex={props.filmIndex}
-          
-        /> </div>)
+      /> </div>)
   }
    else {
     return (
@@ -64,24 +67,22 @@ setFilmData, isVisable, setIsVisable, filmIndex, setFilmIndex } = props
       
         <div className={style.pagination}>
           <Pagination
-            hideDisabled
-            itemClass="page-item"
-            linkClass="page-link"
-            prevPageText='prev'
-            nextPageText='next'
-            firstPageText='first'
-            lastPageText='last'
-            activePage={activePage}
-            itemsCountPerPage={1}
-            totalItemsCount={data.total_pages}
-            pageRangeDisplayed={3}
+              hideDisabled
+              itemClass="page-item"
+              linkClass="page-link"
+              prevPageText='prev'
+              nextPageText='next'
+              firstPageText='first'
+              lastPageText='last'
+              activePage={activePage}
+              itemsCountPerPage={1}
+              totalItemsCount={data.total_pages}
+              pageRangeDisplayed={3}
               onChange={(page) => {
-                if (page !== data.total_pages) {
-                  setPage(page)
-                  setActivePage(page)
-                }
-                else { setPage(page -1) }
-            }} />
+      
+                setPage(page)
+                setActivePage(page)
+              }} />
         </div>
      
    
