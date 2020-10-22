@@ -20,7 +20,7 @@ const backgroundImage = posterUrl + filmData.poster_path
         }
         }>Back to list</button>
         
-        <button onClick={() => {
+        <button onClick={(e) => {
             if (filmIndex <= 18) {
             setFilmIndex(filmIndex + 1);
             setFilmData(data.results[filmIndex + 1])
@@ -33,6 +33,11 @@ const backgroundImage = posterUrl + filmData.poster_path
             setFilmData(data.results[0]);
             setActivePage(activePage + 1)
           }
+          if (data.results[data.results.length - 1] === filmData) {
+         setFilmIndex(filmIndex);
+         setFilmData(data.results[filmIndex]);
+         e.target.style.visibility = 'hidden'
+}
           }}>Next Movie</button>
       </div>
       
