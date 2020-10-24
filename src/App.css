@@ -1,9 +1,17 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 li {
   list-style-type: none
 }
 
- li:hover {
-  opacity: 0.8;
+li:hover {
+  opacity: 0.85;
   cursor: pointer;
   list-style-type: none
 }

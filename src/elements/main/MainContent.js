@@ -19,9 +19,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
   let funcOnPost = (el, ind) => {
     if (ind === 19) {
       setPage(page+1)
-      // setFilmData(el)
-      // setIsVisable(true)
-      // setFilmIndex(ind)
+
     }
     if(ind <= 19) {
       setFilmData(el)

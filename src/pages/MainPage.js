@@ -19,6 +19,8 @@ const [filmIndex, setFilmIndex] = useState(null)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((error) => console.error(error));
+    
+      
       }, [page]);
     // console.log(data)
   

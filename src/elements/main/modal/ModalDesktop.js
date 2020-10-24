@@ -8,7 +8,7 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, f
   const posterUrl = "http://image.tmdb.org/t/p/w200"
   
   const backgroundImage = posterUrl + filmData.poster_path
-  const totalResult = data.total_results
+
 
   return (<div className={style.desktopPage}>
     <Menu />
@@ -26,7 +26,7 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, f
         }>Back to list</button>
         
         <button onClick={(e) => {
-            if (filmIndex <= 18) {
+                 if (filmIndex <= 18) {
             setFilmIndex(filmIndex + 1);
             setFilmData(data.results[filmIndex + 1])
           }

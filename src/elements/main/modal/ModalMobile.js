@@ -39,6 +39,9 @@ const backgroundImage = posterUrl + filmData.poster_path
          e.target.style.visibility = 'hidden'
 }
           }}>Next Movie</button>
+      
+      
+      
       </div>
       
        {/* <div className={style.mobileImg}> */}

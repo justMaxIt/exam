@@ -1,7 +1,8 @@
 import React from "react";
-// import { Link, useLocation } from "react-router-dom";
+// { Link } from "react-router-dom";
 import style from "./Menu.module.css"
 import deathstar from "./deathstar.png"
+import { Link } from "react-router-dom"
 
 
 function Menu() {
@@ -22,8 +23,8 @@ function Menu() {
    <span className={style.articleDDMenu}>My Account</span>
   </button>
   <div class="dropdown-menu dropdown-menu-right">
-    <a class="dropdown-item" href="#">My Account</a>
-    <a class="dropdown-item" href="#">My Favorites</a>
+    <Link to="/" class="dropdown-item">My Account</Link>
+    <Link to="/favorite" class="dropdown-item">My Favorite</Link>
       </div>
     </div>
     </div>

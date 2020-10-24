@@ -35,6 +35,10 @@
   align-items: flex-start;
 }
 
+.borderButton {
+  border: 1px solid white;
+}
+
 @media (max-width: 620px) {
   .rightMenuItem .articleDDMenu {
     font-size: 0;

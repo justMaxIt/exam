@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./elements/menu/Menu";
 import MainPage from "./pages/MainPage";
+import FavoritePage from "./pages/FavoritePage";
 // import ModalPage from "./pages/ModalPage";
 
 function App() {
@@ -11,17 +12,17 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-        
+        {/* <Store /> */}
           <MainPage />
         </Route>
         {/* <Route path="/modal">
           <Menu />
           <ModalPage />
         </Route> */}
-        {/* <Route path="/favorite">
+        <Route path="/favorite">
           <Menu />
           <FavoritePage />
-        </Route> */}
+        </Route>
         <Route path="*">
                     <div>Path error: 404</div>
         </Route>
