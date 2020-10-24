@@ -1,7 +1,7 @@
 import React  from "react";
 import style from "./Main.module.css"
 import Pagination from "react-js-pagination";
-import Modal from "./modal/Modal";
+import Modal from "../modal/Modal";
 import Menu from "../menu/Menu";
 
 
@@ -50,7 +50,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
     return (
       <div>
         <Menu />
-      <div className={style.mainContent}>
+      <div className={style.page}>
       
         <div className={style.articleContent}>
           <h4>Latest Releases</h4>

@@ -1,5 +1,4 @@
 import React from "react";
-// { Link } from "react-router-dom";
 import style from "./Menu.module.css"
 import deathstar from "./deathstar.png"
 import { Link } from "react-router-dom"
@@ -7,8 +6,7 @@ import { Link } from "react-router-dom"
 
 function Menu() {
 
-  
-  return(
+    return(
   <div className={style.menu}>
       <div className={style.leftMenuItem}>
         

@@ -1,15 +1,19 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import style from "./Modal.module.css"
 
 
 function ModalMobile(props) {
+let location = useLocation();
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
 const posterUrl = "http://image.tmdb.org/t/p/w200"
-const backgroundImage = posterUrl + filmData.poster_path
-  return ( <div className={style.mobilePage}>
+
+  
+return ( <div>
+  {location.pathname === "/" ?
     
-    <div className={style.backgroundImage} style={{ backgroundImage: `url(${backgroundImage})` }}></div>
-    
+  <div className={style.mobilePage}>
+    <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
     <div className={style.modContent}>
           <div className={style.topButtons}>
     <button onClick={() => {
@@ -59,8 +63,11 @@ const backgroundImage = posterUrl + filmData.poster_path
     </div>
     
     </div>
-
-    )
+:
+    <div>
+      modal fav
+    </div>}
+  </div>)
 }
   
 

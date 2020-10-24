@@ -1,7 +1,7 @@
 import React  from "react";
+import Modal from "../modal/Modal";
 import style from "./../main/Main.module.css"
 
-import Menu from "../menu/Menu";
 
 
 const posterUrl = "http://image.tmdb.org/t/p/w200"
@@ -32,10 +32,12 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
 //    else {
     return (
       <div>
-      
-            <div className={style.mainContent}>
+      {isVisable? 
+       <Modal />   :    <div className={style.page}>
                 <div>
- ngntntn</div>
+                        content</div> 
+                    </div>
+               }
         {/* <div className={style.articleContent}>
           <h4>Latest Releases</h4>
         </div>
@@ -46,11 +48,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
                 <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el, ind)} /></li>))}
           </ul>
         </div> */}
-      
         
-     
-   
-   </div>
       </div>)
   
   
