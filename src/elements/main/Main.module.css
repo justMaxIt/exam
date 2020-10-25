@@ -41,15 +41,6 @@
   justify-content: center;
 }
 
-@media (max-width: 620px) {
-  .postersContent {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
-  }
-  .postersContent img {
-    width: 150px;
-  }
-}
-
 .favData {
   margin: 0;
   padding: 20px 30px;
@@ -59,6 +50,7 @@
 
 .favBox {
   margin-left: 5%;
+  margin-right: 10px;
   display: block;
 }
 
@@ -67,10 +59,10 @@
   justify-content: space-between;
 }
 
-.favBoxTitle h3{font-weight: 700;}
-
-.favBoxButton {
-  margin-left: 5%;
+.favBoxTitle {
+  margin-right: 20px;
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .favBoxButton button {
@@ -80,4 +72,43 @@
   font-weight: 600;
   border: 2px solid #989BA1;
   border-radius: 5px;
+}
+
+.favBoxDescription {
+  padding-top: 25px;
+  font-size: large;
+  font-weight: 600;
+}
+
+@media (max-width: 620px) {
+  .postersContent {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+  }
+  .postersContent img {
+    width: 150px;
+  }
+  .favImg img {
+    width: 150px;
+  }
+  .favData{
+   display: block;
+     }
+  .favImg {
+    float: left;
+    }
+  .favBox {
+    display: block;
+  }
+  .favBoxTop {
+    display: block;
+  }
+  .favBoxTitle {
+    font-size: medium;
+    margin-bottom: 15px;
+  }
+  .favBoxDescription {
+    padding-top: 10px;
+    font-size: small;
+    font-weight: 500;
+  }
 }

@@ -34,7 +34,7 @@ function FavoriteContent(props) {
                     
                       <div className={style.favBox}>
                         <div className={style.favBoxTop}>
-                          <div className={style.favBoxTitle}><h3>{el.title}</h3>
+                          <div className={style.favBoxTitle}>{el.title}
                           </div>
                           <div className={style.favBoxButton}>
                             <button>Unfavorite</button>
