@@ -4,16 +4,15 @@ import FavoriteContent from "../elements/favorite/FavoriteContent";
 
 function FavoritePage(props) {
 const [openFavModal, setOpenFavModal] = useState(false)
-
+const [filmFavData, setFilmFavData] = useState(null)
+const [filmfavIndex, setFilmFavIndex] = useState(null)
 // const [data, setData] = useState({})
 // const [page, setPage] = useState(1)
 // const [activePage, setActivePage] = useState(1)
   
 // const { setFavFilmArr, favFilmArr} = props
 // const [dataFav, setDataFav] = useState(null) 
-// const [filmData, setFilmData] = useState(null)
 
-// const [filmIndex, setFilmIndex] = useState(null)
 
 
   // useEffect(() => {
@@ -24,12 +23,15 @@ const [openFavModal, setOpenFavModal] = useState(false)
  
   return <div>
     <FavoriteContent
-      setOpenFavModal={setOpenFavModal}
       setFavFilmArr={props.setFavFilmArr}
+      setOpenFavModal={setOpenFavModal}
+      setFilmFavData={setFilmFavData}
+      setFilmFavIndex={setFilmFavIndex}
       favFilmArr={props.favFilmArr}
       openFavModal={openFavModal}
-   
-    
+      filmFavData={filmFavData}
+      filmfavIndex={filmfavIndex}
+
     />
     
   </div>;

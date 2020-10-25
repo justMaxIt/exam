@@ -5,52 +5,43 @@ import ModalFav from "./ModalFav";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function FavoriteContent(props) {
-  const {  setFavFilmArr, setOpenFavModal, favFilmArr, openFavModal } = props
-  // console.log(favFilmArr)
+  const { favFilmArr, openFavModal,  filmFavData, filmfavIndex, setFavFilmArr, setOpenFavModal, setFilmFavData, setFilmFavIndex  } = props
+  
 
 
   let openModal = (el, ind) => {
-    return setOpenFavModal(true)
-  }
-
-//     if (ind === 19) {
-//       setPage(page+1)
-
-//     }
-//     if(ind <= 19) {
-//       setFilmData(el)
-//       setIsVisable(true)
-//       setFilmIndex(ind)}
-// }
-
-//   if (isVisable) {
-  
-//     return (
-//       <div className={style.modal}>
-//         <Modal
-//           setFilmIndex={setFilmIndex}
-//           setIsVisable={setIsVisable}
-//           setFilmData={setFilmData}
-//           setPage={setPage}
-//           setActivePage={setActivePage}
-//           data={props.data}
-//           page={props.page}
-//           activePage={props.activePage}
-//           filmData={props.filmData}
-//           filmIndex={props.filmIndex}
-//       /> </div>)
-//   }
-//    else {
+    return (          
+    setOpenFavModal(true),
+    setFilmFavData(el),
+    setFilmFavIndex(ind)
+    )}
+//  console.log(filmFavData, filmfavIndex)
     return (
       <div>
         {openFavModal ?
-          <ModalFav /> :
+          <ModalFav
+            state={props}
+          /> :
           <div className={style.page}>
+            <div className={style.articleContent}><h4>My favorite</h4></div>
+
             <div>
               <ul className={style.favContent}>
                 {props.favFilmArr?.map((el, ind) =>
                   (<li key={el.id} >
-                    <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => openModal(el, ind)} /></li>))}
+                    <div className={style.favData}>
+                      <div className={style.favImg}><img src={posterUrl + el.poster_path} alt="no poster" onClick={() => openModal(el, ind)} /> </div>
+                    
+                      <div className={style.favBox}>
+                        <div className={style.favBoxTop}>
+                          <div className={style.favBoxTitle}></div>
+                          <div className={style.favBoxButton}></div>
+                        </div>
+                        <div className={style.favBoxDescription} ></div>
+                    </div>
+                                         
+                    </div>
+                  </li>))}
               </ul>
         content</div>
           </div>}
