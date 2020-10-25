@@ -15,7 +15,7 @@ function FavoriteContent(props) {
     setFilmFavData(el),
     setFilmFavIndex(ind)
     )}
-//  console.log(filmFavData, filmfavIndex)
+ console.log(filmFavData, filmfavIndex)
     return (
       <div>
         {openFavModal ?
@@ -34,10 +34,13 @@ function FavoriteContent(props) {
                     
                       <div className={style.favBox}>
                         <div className={style.favBoxTop}>
-                          <div className={style.favBoxTitle}></div>
-                          <div className={style.favBoxButton}></div>
+                          <div className={style.favBoxTitle}><h3>{el.title}</h3>
+                          </div>
+                          <div className={style.favBoxButton}>
+                            <button>Unfavorite</button>
+                          </div>
                         </div>
-                        <div className={style.favBoxDescription} ></div>
+                        <div className={style.favBoxDescription}>{el.overview}</div>
                     </div>
                                          
                     </div>

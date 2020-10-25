@@ -6,7 +6,7 @@
 }
 
 .articleContent {
-  padding-left: 25px;
+  padding-left: 30px;
   padding-top: 30px;
   color: #989BA1;
 }
@@ -50,7 +50,34 @@
   }
 }
 
-.modal overlay {
-  z-index: 999999999;
-  background-color: violet;
+.favData {
+  margin: 0;
+  padding: 20px 30px;
+  display: flex;
+  color: #58565B;
+}
+
+.favBox {
+  margin-left: 5%;
+  display: block;
+}
+
+.favBoxTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favBoxTitle h3{font-weight: 700;}
+
+.favBoxButton {
+  margin-left: 5%;
+}
+
+.favBoxButton button {
+  color: #58565B;
+  background: none;
+  font-size: 18px;
+  font-weight: 600;
+  border: 2px solid #989BA1;
+  border-radius: 5px;
 }

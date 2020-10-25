@@ -5,12 +5,16 @@ html {
 body {
   min-height: 100%;
 }
+ul{
+  margin: 0;
+  padding: 0;
+}
 
 li {
   list-style-type: none
 }
 
-li:hover {
+li img:hover {
   opacity: 0.85;
   cursor: pointer;
   list-style-type: none

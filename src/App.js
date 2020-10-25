@@ -9,9 +9,9 @@ import FavoritePage from "./pages/FavoritePage";
 function App() {
   const [favFilmArr, setFavFilmArr] = useState([])
 
-  // useEffect(() => {
-  //     if (favFilmArr.length === 0) { setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")))}
-  //     }, [favFilmArr])
+  useEffect(() => {
+      if (favFilmArr.length === 0) { setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")))}
+      }, [favFilmArr])
 
   return (
       <Router>
