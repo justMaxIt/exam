@@ -12,8 +12,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-        {/* <Store /> */}
-          <MainPage />
+        <MainPage />
         </Route>
         {/* <Route path="/modal">
           <Menu />

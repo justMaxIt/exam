@@ -7,8 +7,7 @@ import style from "./../main/Main.module.css"
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function FavoriteContent(props) {
-let {setPage, activePage, setActivePage, data, page, 
-setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
+let {dataFav} = props
  
   
 //   if (isVisable) {
@@ -32,13 +31,13 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
 //    else {
     return (
       <div>
-      {isVisable? 
-       <Modal />   :    <div className={style.page}>
+      {/* {isVisable? 
+       <Modal />   :    <div className={style.page}> */}
                 <div>
                         content</div> 
                     </div>
-               }
-        {/* <div className={style.articleContent}>
+              //  }
+        /* <div className={style.articleContent}>
           <h4>Latest Releases</h4>
         </div>
         <div>
@@ -47,9 +46,10 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
               (<li key={el.id} >
                 <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el, ind)} /></li>))}
           </ul>
-        </div> */}
+        </div> */
         
-      </div>)
+      // </div >
+      )
   
   
 }

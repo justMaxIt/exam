@@ -4,8 +4,9 @@ import style from "./Modal.module.css"
 
 
 function ModalMobile(props) {
+
 let location = useLocation();
-const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
+const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props.props;
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
   

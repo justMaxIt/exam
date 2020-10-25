@@ -5,9 +5,12 @@ import style from "./Modal.module.css"
 
 
 function ModalDesktop(props) {
+const posterUrl = "http://image.tmdb.org/t/p/w200"
   let location = useLocation();
-const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props;
-  const posterUrl = "http://image.tmdb.org/t/p/w200"
+  const setFavFilmArr = props.setFavFilmArr
+  const favFilmArr = props.favFilmArr
+ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props.props;
+
  
 return ( <div>
   {location.pathname === "/" ?
@@ -45,7 +48,7 @@ return ( <div>
               setFilmData(data.results[filmIndex]);
               e.target.style.visibility = 'hidden'
             }
-            console.log(data, filmData, filmIndex)
+            // console.log(data, filmData, filmIndex)
           }}>Next Movie</button>
         </div>
         <div className={style.insideContent}>
@@ -54,7 +57,14 @@ return ( <div>
           </div>
           <div className={style.insideFilmContent}>
             <div className={style.buttonAddToFavorite}>
-              <button>Add to favorite</button>
+              <button onClick={() => {
+                favFilmArr.push(filmData);
+                setFavFilmArr(favFilmArr);
+                localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
+                console.log(favFilmArr)
+          }}
+              
+              >Add to favorite</button>
             </div>
       
             <div className={style.titleFilm}>{filmData.title}</div>

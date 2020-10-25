@@ -34,16 +34,17 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
     return (
       <div className={style.modal}>
         <Modal
-          setFilmIndex={setFilmIndex}
-          setIsVisable={setIsVisable}
-          setFilmData={setFilmData}
-          setPage={setPage}
-          setActivePage={setActivePage}
-          data={props.data}
-          page={props.page}
-          activePage={props.activePage}
-          filmData={props.filmData}
-          filmIndex={props.filmIndex}
+          // setFilmIndex={setFilmIndex}
+          // setIsVisable={setIsVisable}
+          // setFilmData={setFilmData}
+          // setPage={setPage}
+          // setActivePage={setActivePage}
+          // data={props.data}
+          // page={props.page}
+          // activePage={props.activePage}
+          // filmData={props.filmData}
+          // filmIndex={props.filmIndex}
+          props={props}
       /> </div>)
   }
    else {
