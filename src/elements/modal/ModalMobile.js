@@ -4,10 +4,11 @@ import style from "./Modal.module.css"
 
 
 function ModalMobile(props) {
-
-let location = useLocation();
-const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props.props;
 const posterUrl = "http://image.tmdb.org/t/p/w200"
+let location = useLocation();
+const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
+    data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
+
 
   
 return ( <div>
@@ -52,7 +53,12 @@ return ( <div>
        {/* <div className={style.mobileImg}> */}
         <img className={style.mobileImg} src={posterUrl + filmData.poster_path} alt="movie poster" />
         <div className={style.buttonAddToFavorite}>
-      <button>ICON</button>
+      <button onClick={() => {
+                favFilmArr.push(filmData);
+                setFavFilmArr(favFilmArr);
+                localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
+                console.log(favFilmArr)
+          }}>ICON</button>
 </div>
      <div className={style.scoreRatingReleasMobile}>
      <div style={{marginTop: "30px"}}> Score: </div><div className={style.textMobile}>{filmData.vote_average}</div>

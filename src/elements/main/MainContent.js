@@ -8,7 +8,8 @@ import Menu from "../menu/Menu";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function MainContent(props) {
-let {setPage, activePage, setActivePage, data, page, 
+  
+const {setPage, activePage, setActivePage, data, page, 
 setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
  
   // let posterPath = data?.map(el => posterUrl + el.poster_path)
@@ -44,7 +45,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
           // activePage={props.activePage}
           // filmData={props.filmData}
           // filmIndex={props.filmIndex}
-          props={props}
+          state={props}
       /> </div>)
   }
    else {

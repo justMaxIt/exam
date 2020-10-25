@@ -2,7 +2,7 @@ import React from "react";
 import ModalDesktop from "./ModalDesktop";
 import ModalMobile from "./ModalMobile";
 import style from "./Modal.module.css"
-import { useState } from "react";
+
 
 
   
@@ -18,11 +18,12 @@ const [width, setWidth] = React.useState(window.innerWidth);
 
 
 const Modal = (props) => {
+  // debugger
   // const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, page, activePage, filmData, filmIndex} = props;
   const { width } = useViewport();
   const breakpoint = 620;
 
-const [favFilmArr, setFavFilmArr] = useState([])
+
  
   return (<div>
     <div className={style.backgroundImageBlur}></div>
@@ -40,9 +41,9 @@ const [favFilmArr, setFavFilmArr] = useState([])
         //   activePage={props.activePage}
         // filmIndex={props.filmIndex}
         // filmData={props.filmData}
-          props={props.props}
-          setFavFilmArr={setFavFilmArr}
-          favFilmArr={favFilmArr}
+          state={props.state}
+          // setFavFilmArr={setFavFilmArr}
+          // favFilmArr={favFilmArr}
 
   
       /> :
@@ -57,9 +58,9 @@ const [favFilmArr, setFavFilmArr] = useState([])
         //   activePage={props.activePage}
         // filmIndex={props.filmIndex}
         //   filmData={props.filmData}
-          props={props.props}
-             setFavFilmArr={setFavFilmArr}
-          favFilmArr={favFilmArr}
+          state={props.state}
+          //    setFavFilmArr={setFavFilmArr}
+          // favFilmArr={favFilmArr}
 
              />}
   </div></div>

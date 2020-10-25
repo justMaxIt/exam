@@ -6,10 +6,9 @@ import style from "./Modal.module.css"
 
 function ModalDesktop(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
-  let location = useLocation();
-  const setFavFilmArr = props.setFavFilmArr
-  const favFilmArr = props.favFilmArr
- const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, filmData, filmIndex, page, activePage } = props.props;
+let location = useLocation();
+  const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
+    data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
 
  
 return ( <div>

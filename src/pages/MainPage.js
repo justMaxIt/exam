@@ -12,7 +12,7 @@ const [activePage, setActivePage] = useState(1)
 const [filmData, setFilmData] = useState(null)
 const [isVisable, setIsVisable] = useState(false)
 const [filmIndex, setFilmIndex] = useState(null)
-// const [lastFilmClick, setLastFilmClick] = useState(false)
+
 
   useEffect(() => {
     fetch(`${api}${page}`)
@@ -25,19 +25,21 @@ const [filmIndex, setFilmIndex] = useState(null)
     // console.log(data)
   
   return <div className="main-page">
-      <MainContent
+    
+    <MainContent
       data={data}
       activePage={activePage}
       setActivePage={setActivePage}
       setPage={setPage}
       page={page}
       filmData={filmData}
-setFilmData={setFilmData}
-isVisable={isVisable}
+      setFilmData={setFilmData}
+      isVisable={isVisable}
       setIsVisable={setIsVisable}
       filmIndex={filmIndex}
       setFilmIndex={setFilmIndex}
-
+      favFilmArr={props.favFilmArr}
+      setFavFilmArr={props.setFavFilmArr}
     />
   </div>;
 }

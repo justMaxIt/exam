@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Menu from "./elements/menu/Menu";
@@ -7,20 +7,26 @@ import FavoritePage from "./pages/FavoritePage";
 // import ModalPage from "./pages/ModalPage";
 
 function App() {
+  const [favFilmArr, setFavFilmArr] = useState([])
+
+  // useEffect(() => {
+  //     if (favFilmArr.length === 0) { setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")))}
+  //     }, [favFilmArr])
+
   return (
-    
-    <Router>
+      <Router>
       <Switch>
         <Route exact path="/">
-        <MainPage />
+          <MainPage
+            favFilmArr={favFilmArr}
+            setFavFilmArr={setFavFilmArr} />
         </Route>
-        {/* <Route path="/modal">
-          <Menu />
-          <ModalPage />
-        </Route> */}
         <Route path="/favorite">
           <Menu />
-          <FavoritePage />
+          <FavoritePage
+          favFilmArr={favFilmArr}
+          setFavFilmArr={setFavFilmArr}
+          />
         </Route>
         <Route path="*">
                     <div>Path error: 404</div>
