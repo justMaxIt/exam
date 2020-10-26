@@ -48,8 +48,11 @@
   color: #58565B;
 }
 
+.favImg {
+  margin-right: 6%;
+}
+
 .favBox {
-  margin-left: 5%;
   margin-right: 10px;
   display: block;
 }
@@ -87,15 +90,20 @@
   .postersContent img {
     width: 150px;
   }
+  .articleContent {
+    padding-top: 15px;
+  }
+  .favData {
+    display: block;
+    padding: 10px 30px;
+  }
   .favImg img {
     width: 150px;
   }
-  .favData{
-   display: block;
-     }
   .favImg {
+    margin-bottom: 3%;
     float: left;
-    }
+  }
   .favBox {
     display: block;
   }
@@ -104,7 +112,7 @@
   }
   .favBoxTitle {
     font-size: medium;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .favBoxDescription {
     padding-top: 10px;

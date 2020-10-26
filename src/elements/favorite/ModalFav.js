@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./../modal/Modal.module.css"
-
+import {useViewport} from "./../modal/Modal"
 
 
   
@@ -8,12 +8,19 @@ import style from "./../modal/Modal.module.css"
 
 
 const ModalFav = (props) => {
+  const { width } = useViewport();
+  const breakpoint = 620;
+
   return (<div>
-    <div className={style.modCont}>
-      FavModal
+  {    width < breakpoint ?
+  <div>
+      <div className={style.modCont}>
+        nerrou
        </div>
-  </div>
-   );
+    </div> :
+    <div>fullscreen</div>
+  
+   }</div>)
 }
 
 export default ModalFav;
