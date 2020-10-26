@@ -6,6 +6,7 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
 
+let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
   
 return ( <div>
     
@@ -46,14 +47,17 @@ return ( <div>
      <div className={style.imgModal} >
         <img src={posterUrl + filmData.poster_path} alt="movie poster" />
       </div>
-        <div className={style.buttonAddToFavorite}>
-      <button onClick={() => {
-                favFilmArr.push(filmData);
-                setFavFilmArr(favFilmArr);
-                localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
-                console.log(favFilmArr)
-          }}>ICON</button>
-    </div>
+       {(addedFilm === undefined && style.visibility !== 'hidden') ? <div className={style.buttonAddToFavorite}>
+          <button onClick={(e) => {
+            favFilmArr.push(filmData);
+            setFavFilmArr(favFilmArr);
+            localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
+            e.target.style.visibility = 'hidden'
+            // console.log(favFilmArr)
+          }}
+              
+          >ICON</button>
+        </div> : null}
 
       
 

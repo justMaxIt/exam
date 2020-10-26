@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Menu from "../menu/Menu";
 import style from "./Modal.module.css"
 
@@ -6,9 +6,23 @@ import style from "./Modal.module.css"
 function ModalDesktop(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
-data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
+    data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
+  const [condition, setCondition] = useState(false)  
 
+let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
  
+  useEffect(() => {
+    if (condition === true) {
+      favFilmArr.push(filmData);
+      setFavFilmArr(favFilmArr);
+      localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
+      style.visibility = 'hidden';
+      setCondition(false)
+    }
+    
+       }, [condition]);
+  
+  
 return ( <div>
       <Menu />
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
@@ -50,16 +64,13 @@ return ( <div>
       </div>
       
           <div className={style.insideFilmContent}>
-            <div className={style.buttonAddToFavorite}>
-              <button onClick={() => {
-                favFilmArr.push(filmData);
-                setFavFilmArr(favFilmArr);
-                localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
-                console.log(favFilmArr)
-          }}
+        {(addedFilm === undefined) ? <div className={style.buttonAddToFavorite}>
+          <button onClick={() => {
+            setCondition(true)
+           }}
               
-              >Add to favorite</button>
-            </div>
+          >Add to favorite</button>
+        </div> : null}
       
             <div className={style.titleFilm}>{filmData.title}</div>
         <div className={style.scoreRatingRelease}>

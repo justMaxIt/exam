@@ -96,6 +96,7 @@
   .favData {
     display: block;
     padding: 10px 30px;
+    min-height: 245px;
   }
   .favImg img {
     width: 150px;

@@ -20,37 +20,11 @@ const Modal = (props) => {
        
     {width < breakpoint ?
       <ModalMobile
-        //  setIsVisable={props.setIsVisable}
-        // setFilmData={props.setFilmData}
-        //   setFilmIndex={props.setFilmIndex}
-        //   setActivePage={props.setActivePage}
-        //   setPage={props.setPage}
-        //   data={props.data}
-        //   page={props.page}
-        //   activePage={props.activePage}
-        // filmIndex={props.filmIndex}
-        // filmData={props.filmData}
-          state={props.state}
-          // setFavFilmArr={setFavFilmArr}
-          // favFilmArr={favFilmArr}
-
-  
+       state={props.state}
       /> :
       <ModalDesktop
-        // setIsVisable={props.setIsVisable}
-        // setFilmData={props.setFilmData}
-        //   setFilmIndex={props.setFilmIndex}
-        //   setActivePage={props.setActivePage}
-        //   setPage={props.setPage}
-        //   data={props.data}
-        //   page={props.page}
-        //   activePage={props.activePage}
-        // filmIndex={props.filmIndex}
-        //   filmData={props.filmData}
-          state={props.state}
-          //    setFavFilmArr={setFavFilmArr}
-          // favFilmArr={favFilmArr}
-             />}
+      state={props.state}
+      />}
   </div>
    );
 }
