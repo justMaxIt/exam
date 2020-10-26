@@ -1,12 +1,9 @@
 import React, {useState, useEffect} from "react";
 import ModalDesktop from "./ModalDesktop";
 import ModalMobile from "./ModalMobile";
-import style from "./Modal.module.css"
 
 
-
-  
-export const useViewport = () => {
+  export const useViewport = () => {
 const [width, setWidth] = useState(window.innerWidth);
     useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
@@ -15,20 +12,12 @@ const [width, setWidth] = useState(window.innerWidth);
   }, []);
   return { width };}
 
-
-
 const Modal = (props) => {
-  // debugger
-  // const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, data, page, activePage, filmData, filmIndex} = props;
   const { width } = useViewport();
   const breakpoint = 620;
-
-
  
   return (<div>
-    <div className={style.backgroundImageBlur}></div>
-    <div className={style.modCont}>
-     
+       
     {width < breakpoint ?
       <ModalMobile
         //  setIsVisable={props.setIsVisable}
@@ -61,9 +50,8 @@ const Modal = (props) => {
           state={props.state}
           //    setFavFilmArr={setFavFilmArr}
           // favFilmArr={favFilmArr}
-
              />}
-  </div></div>
+  </div>
    );
 }
 

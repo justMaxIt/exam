@@ -1,4 +1,5 @@
 import React  from "react";
+import Menu from "../menu/Menu";
 import style from "./../main/Main.module.css"
 import ModalFav from "./ModalFav";
 
@@ -22,6 +23,9 @@ function FavoriteContent(props) {
           <ModalFav
             state={props}
           /> :
+
+          <div>
+            <Menu />
           <div className={style.page}>
             <div className={style.articleContent}><h4>My favorite</h4></div>
 
@@ -47,7 +51,8 @@ function FavoriteContent(props) {
                   </li>))}
               </ul>
         content</div>
-          </div>}
+            </div></div>
+          }
             </div>
         
 

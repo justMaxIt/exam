@@ -1,21 +1,15 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import style from "./Modal.module.css"
-
 
 function ModalMobile(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
-let location = useLocation();
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
 
-
   
 return ( <div>
-  {location.pathname === "/" ?
     
-  <div className={style.mobilePage}>
-    <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
+     <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
     <div className={style.modContent}>
           <div className={style.topButtons}>
     <button onClick={() => {
@@ -24,7 +18,7 @@ return ( <div>
             setIsVisable(false) }
           else { setIsVisable(false) }
         }
-        }>Back to list</button>
+        }>Back</button>
         
         <button onClick={(e) => {
             if (filmIndex <= 18) {
@@ -44,14 +38,14 @@ return ( <div>
          setFilmData(data.results[filmIndex]);
          e.target.style.visibility = 'hidden'
 }
-          }}>Next Movie</button>
-      
-      
-      
+          }}>Next</button>
+          
       </div>
       
-       {/* <div className={style.mobileImg}> */}
-        <img className={style.mobileImg} src={posterUrl + filmData.poster_path} alt="movie poster" />
+    <div className={style.insideContent}>
+     <div className={style.imgModal} >
+        <img src={posterUrl + filmData.poster_path} alt="movie poster" />
+      </div>
         <div className={style.buttonAddToFavorite}>
       <button onClick={() => {
                 favFilmArr.push(filmData);
@@ -59,22 +53,21 @@ return ( <div>
                 localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
                 console.log(favFilmArr)
           }}>ICON</button>
-</div>
-     <div className={style.scoreRatingReleasMobile}>
-     <div style={{marginTop: "30px"}}> Score: </div><div className={style.textMobile}>{filmData.vote_average}</div>
-      <div>Rating: </div><div className={style.textMobile}>{ (filmData.adult === true)? "R" : "Pg"}</div>
-      <div>Release Date:</div> <div className={style.textMobile}>{filmData.release_date}</div></div>
-       <div className={style.titleFilm} style={{padding: "0"}}>{filmData.title}</div>
-<div className={style.descriptionFilm} style={{margin: "0"}}>{filmData.overview}</div>
+    </div>
 
+      
+
+      
+     <div className={style.scoreRatingRelease}>
+      <div> Score: </div><div className={style.textMobile}>{filmData.vote_average}</div>
+      <div>Rating: </div><div className={style.textMobile}>{ (filmData.adult === true)? "R" : "Pg"}</div>
+        <div>Release Date:</div> <div className={style.textMobile}>{filmData.release_date}</div>
+      </div>
+       <div className={style.titleFilm}>{filmData.title}</div>
+<div className={style.descriptionFilm}>{filmData.overview}</div>
+</div>
     </div>
-    
-    </div>
-:
-    <div>
-      modal fav
-    </div>}
-  </div>)
+ </div>)
 }
   
 

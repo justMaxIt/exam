@@ -1,25 +1,19 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 import Menu from "../menu/Menu";
 import style from "./Modal.module.css"
 
 
 function ModalDesktop(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
-let location = useLocation();
-  const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
-    data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
+const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
+data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
 
  
 return ( <div>
-  {location.pathname === "/" ?
-  
-    <div className={style.desktopPage}>
       <Menu />
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
       <div className={style.modContent}>
-     
-        <div className={style.topButtons}>
+      <div className={style.topButtons}>
           <button onClick={() => {
             if (filmIndex === 19) {
               setPage(page - 1)
@@ -53,7 +47,8 @@ return ( <div>
         <div className={style.insideContent}>
           <div className={style.imgModal}>
             <img src={posterUrl + filmData.poster_path} alt="movie poster" />
-          </div>
+      </div>
+      
           <div className={style.insideFilmContent}>
             <div className={style.buttonAddToFavorite}>
               <button onClick={() => {
@@ -67,23 +62,17 @@ return ( <div>
             </div>
       
             <div className={style.titleFilm}>{filmData.title}</div>
-            <div className={style.scoreRatingRelease}>
+        <div className={style.scoreRatingRelease}>
               <div>Score: {filmData.vote_average}</div>
-              <div style={{ borderLeft: "2px solid rgba(255, 255, 255, 0.3)", borderRight: "2px solid rgba(255, 255, 255, 0.3)" }}>Rating: {(filmData.adult === true) ? "R" : "Pg"}</div>
-              <div>Release Date: {filmData.release_date}</div></div>
+              <div className={style.rating}>Rating: {(filmData.adult === true) ? "R" : "Pg"}</div>
+              <div>Release Date: {filmData.release_date}</div>
+        </div>
             <div className={style.descriptionFilm}>{filmData.overview}</div>
-          </div></div>
       </div>
-    
-    </div> :
-    <div>
-      modal fav
-    </div>}
-    
     </div>
-
-
-    )
+      </div>
+        </div> 
+       )
 }
   
 
