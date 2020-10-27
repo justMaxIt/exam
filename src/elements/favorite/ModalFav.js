@@ -10,7 +10,7 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 
 const ModalFav = (props) => {
-  const{filmFavData} = props.state
+  const{setOpenFavModal, filmFavData} = props.state
   const { width } = useViewport();
   const breakpoint = 620;
 
@@ -20,7 +20,7 @@ const ModalFav = (props) => {
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmFavData.poster_path})` }}></div>
         <div className={style.modContent}>
         <div className={style.topButtons}>
-    <button>Back</button>
+            <button onClick={() => {setOpenFavModal(false)}}>Back</button>
     <button >Next</button>
     </div>
         <div className={style.insideContent}>
@@ -52,7 +52,7 @@ const ModalFav = (props) => {
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmFavData.poster_path})` }}></div>
         <div className={style.modContent}>
         <div className={style.topButtons}>
-    <button>Back</button>
+    <button onClick={() => {setOpenFavModal(false)}}>Back</button>
     <button >Next</button>
     </div>
         <div className={style.insideContent}>

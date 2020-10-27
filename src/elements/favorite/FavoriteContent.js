@@ -1,4 +1,4 @@
-import React, {useState, useEffect}  from "react";
+import React  from "react";
 import Menu from "../menu/Menu";
 import style from "./../main/Main.module.css"
 import ModalFav from "./ModalFav";
@@ -6,23 +6,8 @@ import ModalFav from "./ModalFav";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function FavoriteContent(props) {
-  const { favFilmArr, openFavModal,  filmFavData, setFavFilmArr, setOpenFavModal, setFilmFavData} = props
-  const [delFilm, setDelFilm] = useState(undefined)  
-
-  
-  useEffect(() => {
-    if (filmFavData != null && openFavModal === false) {
-      setDelFilm(favFilmArr.find(el => (filmFavData.id === el.id)))
-  }
-    if (delFilm != undefined) {
-      let filterArr = favFilmArr.filter(el => el.id != delFilm.id)
-      setFavFilmArr(filterArr)
-      localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
-      }
-    
-  }, [filmFavData, delFilm, favFilmArr]);
-  
-  
+  const {setOpenFavModal, setFilmFavData, openFavModal } = props
+     
   let openModal = (el) => {
     return (          
     setOpenFavModal(true),
@@ -30,8 +15,7 @@ function FavoriteContent(props) {
     )
   }
   
-
- console.log(favFilmArr, filmFavData, delFilm)
+//  console.log(favFilmArr, filmFavData, delFilm)
     return (
       <div>
         {openFavModal ?
@@ -70,26 +54,7 @@ function FavoriteContent(props) {
             </div></div>
           }
             </div>
-        
-
-
-
-
-      //   <div className={style.articleContent}>
-      //     <h4>Latest Releases</h4>
-      //   </div>
-      //   <div>
-      //     <ul className={style.postersContent}>
-      //       {props.data.results?.map((el, ind) =>
-      //         (<li key={el.id} >
-      //           <img src={posterUrl + el.poster_path} alt="no poster" onClick={() => funcOnPost(el, ind)} /></li>))}
-      //     </ul>
-      //   </div> 
-        
-      //  </div >
-      )
-  
-  
-}
+        )
+  }
 
 export default FavoriteContent;

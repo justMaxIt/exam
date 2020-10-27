@@ -7,7 +7,7 @@ function ModalDesktop(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
-  const [condition, setCondition] = useState(false)  
+const [condition, setCondition] = useState(false)  
 
 let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
  
