@@ -1,12 +1,22 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import style from "./Modal.module.css"
 
 function ModalMobile(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
+const [condition, setCondition] = useState(false)  
 
 let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
+ 
+  useEffect(() => {
+    if (condition === true) {
+      favFilmArr.push(filmData);
+      setFavFilmArr(favFilmArr);
+      localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
+      style.visibility = 'hidden';
+      setCondition(false)}
+    }, [condition]);
   
 return ( <div>
     
@@ -47,14 +57,9 @@ return ( <div>
      <div className={style.imgModal} >
         <img src={posterUrl + filmData.poster_path} alt="movie poster" />
       </div>
-       {(addedFilm === undefined && style.visibility !== 'hidden') ? <div className={style.buttonAddToFavorite}>
-          <button onClick={(e) => {
-            favFilmArr.push(filmData);
-            setFavFilmArr(favFilmArr);
-            localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
-            e.target.style.visibility = 'hidden'
-            // console.log(favFilmArr)
-          }}
+       {(addedFilm === undefined) ? <div className={style.buttonAddToFavorite}>
+          <button onClick={() => {
+            setCondition(true)}}
               
           >ICON</button>
         </div> : null}

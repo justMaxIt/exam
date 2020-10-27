@@ -17,10 +17,8 @@ let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
       setFavFilmArr(favFilmArr);
       localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
       style.visibility = 'hidden';
-      setCondition(false)
-    }
-    
-       }, [condition]);
+      setCondition(false)}
+    }, [condition]);
   
   
 return ( <div>

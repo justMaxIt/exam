@@ -7,10 +7,10 @@ import FavoritePage from "./pages/FavoritePage";
 
 function App() {
   const [favFilmArr, setFavFilmArr] = useState([])
-
+ 
   useEffect(() => {
       if (favFilmArr.length === 0) { setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")))}
-      }, [favFilmArr])
+      }, [])
 
   return (
       <Router>
@@ -23,8 +23,7 @@ function App() {
         <Route path="/favorite">
           <FavoritePage
           favFilmArr={favFilmArr}
-          setFavFilmArr={setFavFilmArr}
-          />
+            setFavFilmArr={setFavFilmArr} />
         </Route>
         <Route path="*">
                     <div>Path error: 404</div>

@@ -20,19 +20,15 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
   let funcOnPost = (el, ind) => {
     if (ind === 19) {
       setPage(page+1)
-
     }
     if(ind <= 19) {
       setFilmData(el)
       setIsVisable(true)
       setFilmIndex(ind)}
 }
-// console.log(data)
-  
-  if (isVisable) {
-   
 
-    return (
+  if (isVisable) {
+      return (
       <div className={style.modal}>
         <Modal
           // setFilmIndex={setFilmIndex}

@@ -16,7 +16,7 @@ const [filmIndex, setFilmIndex] = useState(null)
       .then((res) => res.json())
       .then((res) => setData(res))
       .catch((error) => console.error(error));
-       }, [page,  ]);
+       }, [page]);
     // console.log(data)
   
   return <div className="main-page">
