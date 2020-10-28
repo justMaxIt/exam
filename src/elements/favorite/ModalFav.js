@@ -10,7 +10,7 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 
 const ModalFav = (props) => {
-  const{setOpenFavModal, filmFavData} = props.state
+  const{setOpenFavModal, setFilmFavData, setFilmFavInd, favFilmArr, filmFavData, filmFavInd} = props.state
   const { width } = useViewport();
   const breakpoint = 620;
 
@@ -20,8 +20,17 @@ const ModalFav = (props) => {
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmFavData.poster_path})` }}></div>
         <div className={style.modContent}>
         <div className={style.topButtons}>
-            <button onClick={() => {setOpenFavModal(false)}}>Back</button>
-    <button >Next</button>
+            <button onClick={() => {
+             setOpenFavModal(false)
+            
+            }}>Back</button>
+            {favFilmArr.length !== 1 ?
+            
+              <button onClick={() => {
+                setFilmFavInd(filmFavInd + 1);
+                setFilmFavData(favFilmArr[filmFavInd + 1])
+              }}>Next</button>
+              : null}
     </div>
         <div className={style.insideContent}>
             <div className={style.imgModal} >
@@ -53,7 +62,13 @@ const ModalFav = (props) => {
         <div className={style.modContent}>
         <div className={style.topButtons}>
     <button onClick={() => {setOpenFavModal(false)}}>Back</button>
-    <button >Next</button>
+     {favFilmArr.length !== 1 ?
+     <button onClick={() => {
+                setFilmFavInd(filmFavInd + 1);
+                setFilmFavData(favFilmArr[filmFavInd + 1])
+              }}>Next
+     </button>
+              : null}
     </div>
         <div className={style.insideContent}>
             <div className={style.imgModal} >

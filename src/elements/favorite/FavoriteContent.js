@@ -6,12 +6,13 @@ import ModalFav from "./ModalFav";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function FavoriteContent(props) {
-  const {setOpenFavModal, setFilmFavData, openFavModal } = props
+  const {setOpenFavModal, setFilmFavData, setFilmFavInd, openFavModal } = props
      
-  let openModal = (el) => {
+  let openModal = (el, ind) => {
     return (          
     setOpenFavModal(true),
-    setFilmFavData(el)
+      setFilmFavData(el),
+      setFilmFavInd(ind)
     )
   }
   
@@ -30,10 +31,10 @@ function FavoriteContent(props) {
 
             <div>
               <ul className={style.favContent}>
-                {props.favFilmArr?.map((el) =>
+                {props.favFilmArr?.map((el, ind) =>
                   (<li key={el.id} >
                     <div className={style.favData}>
-                      <div className={style.favImg}><img src={posterUrl + el.poster_path} alt="no poster" onClick={() => openModal(el)} /> </div>
+                      <div className={style.favImg}><img src={posterUrl + el.poster_path} alt="no poster" onClick={() => openModal(el, ind)} /> </div>
                     
                       <div className={style.favBox}>
                         <div className={style.favBoxTop}>

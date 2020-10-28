@@ -12,13 +12,13 @@ const [condition, setCondition] = useState(false)
 let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
  
   useEffect(() => {
-    if (condition === true) {
+    if (condition) {
       favFilmArr.push(filmData);
       setFavFilmArr(favFilmArr);
       localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
       style.visibility = 'hidden';
       setCondition(false)}
-    }, [condition]);
+    }, [condition, favFilmArr, filmData, setFavFilmArr]);
   
   
 return ( <div>
