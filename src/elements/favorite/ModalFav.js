@@ -10,9 +10,18 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 
 const ModalFav = (props) => {
-  const{setOpenFavModal, setFilmFavData, setFilmFavInd, setDelFromModal, favFilmArr, filmFavData, filmFavInd} = props.state
+  const{setOpenFavModal, setFilmFavData, setFilmFavInd, favFilmArr, filmFavData, filmFavInd} = props.state
   const { width } = useViewport();
   const breakpoint = 620;
+  const newDate = new Date(Date.parse(filmFavData.release_date))
+  const year = newDate.getFullYear()
+  function convertDate(date) {
+  let months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'Jule', 'August', 'September', 'October', 'November', 'December'];
+  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  }
+
+// console.log(newDate)
 
   return (<div>
   {    width < breakpoint ?
@@ -35,25 +44,19 @@ const ModalFav = (props) => {
             <div className={style.imgModal} >
         <img src={posterUrl + filmFavData.poster_path} alt="movie poster" />
       </div>
-        {/* <div className={style.buttonAddToFavorite}>
-           <button onClick={() => {setDelFromModal(true)}}>Unfav</button>
-        </div> */}
-            
-          <div className={style.scoreRatingRelease}>
+      <div className={style.scoreRatingRelease}>
       <div> Score: </div><div className={style.textMobile}>{filmFavData.vote_average}</div>
       <div>Rating: </div><div className={style.textMobile}>{ (filmFavData.adult === true)? "R" : "Pg"}</div>
-        <div>Release Date:</div> <div className={style.textMobile}>{filmFavData.release_date}</div>
+        <div>Release Date:</div> <div className={style.textMobile}>{convertDate(newDate)}</div>
       </div>
-       <div className={style.titleFilm}>{filmFavData.title}</div>
+       <div className={style.titleFilm}>{filmFavData.title + ` (${year})`}</div>
 <div className={style.descriptionFilm}>{filmFavData.overview}</div> 
           
             </div> 
        </div>
       </div>
       
-
       :
-
 
       <div>
         <Menu />
@@ -74,15 +77,12 @@ const ModalFav = (props) => {
             <div className={style.imgModal} >
         <img src={posterUrl + filmFavData.poster_path} alt="movie poster" />
             </div>
-             <div className={style.insideFilmContent}>
-        {/* <div className={style.buttonAddToFavorite}>
-           <button>Unfavorite</button>
-            </div> */}
-            <div className={style.titleFilm}>{filmFavData.title}</div> 
+            <div className={style.insideFilmContent}>
+            <div className={style.titleFilm}>{filmFavData.title + ` (${year})`}</div> 
             <div className={style.scoreRatingRelease}>
             <div>Score: {filmFavData.vote_average}</div>
             <div className={style.rating} >Rating: {(filmFavData.adult === true) ? "R" : "Pg"}</div>
-          <div>Release Date: {filmFavData.release_date}</div>
+          <div>Release Date: {convertDate(newDate)}</div>
             </div>
             <div className={style.descriptionFilm}>{filmFavData.overview}</div>
           

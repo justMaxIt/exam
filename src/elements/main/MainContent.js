@@ -12,9 +12,8 @@ function MainContent(props) {
 const {setPage, activePage, setActivePage, data, page, 
 setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
  
-  // let posterPath = data?.map(el => posterUrl + el.poster_path)
-  // let linkId=data?.map(el => el.id)
-  // console.log(data, linkId)
+
+  console.log(data)
 
   
   let funcOnPost = (el, ind) => {
@@ -31,17 +30,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
       return (
       <div className={style.modal}>
         <Modal
-          // setFilmIndex={setFilmIndex}
-          // setIsVisable={setIsVisable}
-          // setFilmData={setFilmData}
-          // setPage={setPage}
-          // setActivePage={setActivePage}
-          // data={props.data}
-          // page={props.page}
-          // activePage={props.activePage}
-          // filmData={props.filmData}
-          // filmIndex={props.filmIndex}
-          state={props}
+        state={props}
       /> </div>)
   }
    else {
