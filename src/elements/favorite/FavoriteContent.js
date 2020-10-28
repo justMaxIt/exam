@@ -18,7 +18,7 @@ function FavoriteContent(props) {
   
 //  console.log(favFilmArr, filmFavData, delFilm)
     return (
-      <div>
+      <div className={style.pageBackgroundFav}>
         {openFavModal ?
           <ModalFav
             state={props}
