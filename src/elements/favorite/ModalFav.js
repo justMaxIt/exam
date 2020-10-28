@@ -10,7 +10,7 @@ const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 
 const ModalFav = (props) => {
-  const{setOpenFavModal, setFilmFavData, setFilmFavInd, favFilmArr, filmFavData, filmFavInd} = props.state
+  const{setOpenFavModal, setFilmFavData, setFilmFavInd, setDelFromModal, favFilmArr, filmFavData, filmFavInd} = props.state
   const { width } = useViewport();
   const breakpoint = 620;
 
@@ -35,9 +35,9 @@ const ModalFav = (props) => {
             <div className={style.imgModal} >
         <img src={posterUrl + filmFavData.poster_path} alt="movie poster" />
       </div>
-        <div className={style.buttonAddToFavorite}>
-           <button>ICON</button>
-        </div>
+        {/* <div className={style.buttonAddToFavorite}>
+           <button onClick={() => {setDelFromModal(true)}}>Unfav</button>
+        </div> */}
             
           <div className={style.scoreRatingRelease}>
       <div> Score: </div><div className={style.textMobile}>{filmFavData.vote_average}</div>
@@ -75,10 +75,9 @@ const ModalFav = (props) => {
         <img src={posterUrl + filmFavData.poster_path} alt="movie poster" />
             </div>
              <div className={style.insideFilmContent}>
-        <div className={style.buttonAddToFavorite}>
+        {/* <div className={style.buttonAddToFavorite}>
            <button>Unfavorite</button>
-            </div>
-            
+            </div> */}
             <div className={style.titleFilm}>{filmFavData.title}</div> 
             <div className={style.scoreRatingRelease}>
             <div>Score: {filmFavData.vote_average}</div>
