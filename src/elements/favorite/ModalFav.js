@@ -4,7 +4,6 @@ import { useViewport } from "./../modal/Modal"
 import Menu from "../menu/Menu";
 
 
-
   
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
