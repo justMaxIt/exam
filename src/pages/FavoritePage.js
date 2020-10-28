@@ -20,7 +20,7 @@ const [delFilm, setDelFilm] = useState(undefined)
       setFavFilmArr(filterArr)
       localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr))
     }
-      }, [filmFavData, delFilm, favFilmArr]);
+      }, [filmFavData, delFilm, favFilmArr, openFavModal, setFavFilmArr]);
  
   return <div>
     <FavoriteContent

@@ -18,10 +18,8 @@ const ModalFav = (props) => {
   function convertDate(date) {
   let months = ['January', 'February', 'March', 'April', 'May', 'June',
                 'Jule', 'August', 'September', 'October', 'November', 'December'];
-  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear();
+  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
   }
-
-// console.log(newDate)
 
   return (<div>
   {    width < breakpoint ?
@@ -30,7 +28,8 @@ const ModalFav = (props) => {
         <div className={style.modContent}>
         <div className={style.topButtons}>
             <button onClick={() => {
-             setOpenFavModal(false)
+              setOpenFavModal(false)
+              setFilmFavData(null)
              }}>Back</button>
            {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ?
               <button onClick={() => {
@@ -63,7 +62,10 @@ const ModalFav = (props) => {
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmFavData.poster_path})` }}></div>
         <div className={style.modContent}>
         <div className={style.topButtons}>
-    <button onClick={() => {setOpenFavModal(false)}}>Back</button>
+            <button onClick={() => {
+              setOpenFavModal(false)
+              setFilmFavData(null)
+            }}>Back</button>
 
             {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ?
               <button onClick={() => {

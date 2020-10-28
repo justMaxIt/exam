@@ -13,7 +13,7 @@ const {setPage, activePage, setActivePage, data, page,
 setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
  
 
-  console.log(data)
+  // console.log(data)
 
   
   let funcOnPost = (el, ind) => {

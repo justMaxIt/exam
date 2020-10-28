@@ -6,7 +6,7 @@ import ModalFav from "./ModalFav";
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 
 function FavoriteContent(props) {
-  const {setOpenFavModal, setFilmFavData, setFilmFavInd, openFavModal } = props
+  const {setOpenFavModal, setFilmFavData, setFilmFavInd, openFavModal, filmFavData } = props
      
   let openModal = (el, ind) => {
     return (          
@@ -16,7 +16,7 @@ function FavoriteContent(props) {
     )
   }
   
-//  console.log(favFilmArr, filmFavData, delFilm)
+ console.log(filmFavData)
     return (
       <div >
         {openFavModal ?

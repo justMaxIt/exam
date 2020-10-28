@@ -7,10 +7,18 @@ function ModalDesktop(props) {
 const posterUrl = "http://image.tmdb.org/t/p/w200"
 const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
-const [condition, setCondition] = useState(false)  
+  const [condition, setCondition] = useState(false)  
 
-let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
- 
+  let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
+
+  const newDate = new Date(Date.parse(filmData.release_date))
+  const year = newDate.getFullYear()
+  function convertDate(date) {
+  let months = ['January', 'February', 'March', 'April', 'May', 'June',
+                'Jule', 'August', 'September', 'October', 'November', 'December'];
+  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
+  }
+
   useEffect(() => {
     if (condition) {
       favFilmArr.push(filmData);
@@ -70,11 +78,11 @@ return ( <div>
           >Add to favorite</button>
         </div> : null}
       
-            <div className={style.titleFilm}>{filmData.title}</div>
+            <div className={style.titleFilm}>{filmData.title + ` (${year})`}</div>
         <div className={style.scoreRatingRelease}>
               <div>Score: {filmData.vote_average}</div>
               <div className={style.rating}>Rating: {(filmData.adult === true) ? "R" : "Pg"}</div>
-              <div>Release Date: {filmData.release_date}</div>
+              <div>Release Date: {convertDate(newDate)}</div>
         </div>
             <div className={style.descriptionFilm}>{filmData.overview}</div>
       </div>

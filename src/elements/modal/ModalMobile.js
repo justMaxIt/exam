@@ -8,7 +8,15 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavF
 const [condition, setCondition] = useState(false)  
 
 let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
- 
+  
+const newDate = new Date(Date.parse(filmData.release_date))
+const year = newDate.getFullYear()
+function convertDate(date) {
+let months = ['January', 'February', 'March', 'April', 'May', 'June',
+              'Jule', 'August', 'September', 'October', 'November', 'December'];
+  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
+  } 
+  
   useEffect(() => {
     if (condition === true) {
       favFilmArr.push(filmData);
@@ -70,9 +78,9 @@ return ( <div>
      <div className={style.scoreRatingRelease}>
       <div> Score: </div><div className={style.textMobile}>{filmData.vote_average}</div>
       <div>Rating: </div><div className={style.textMobile}>{ (filmData.adult === true)? "R" : "Pg"}</div>
-        <div>Release Date:</div> <div className={style.textMobile}>{filmData.release_date}</div>
+        <div>Release Date:</div> <div className={style.textMobile}>{convertDate(newDate)}</div>
       </div>
-       <div className={style.titleFilm}>{filmData.title}</div>
+       <div className={style.titleFilm}>{filmData.title + ` (${year})`}</div>
 <div className={style.descriptionFilm}>{filmData.overview}</div>
 </div>
     </div>

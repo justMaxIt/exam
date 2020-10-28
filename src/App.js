@@ -10,7 +10,7 @@ function App() {
  
   useEffect(() => {
       if (favFilmArr.length === 0) { setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")))}
-      }, [])
+      }, [favFilmArr.length])
 
   return (
       <Router>
