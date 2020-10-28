@@ -62,13 +62,14 @@ const ModalFav = (props) => {
         <div className={style.modContent}>
         <div className={style.topButtons}>
     <button onClick={() => {setOpenFavModal(false)}}>Back</button>
-     {favFilmArr.length !== 1 ?
-     <button onClick={() => {
+
+            {favFilmArr.[favFilmArr.length - 1].id !== filmFavData.id ?
+              <button onClick={() => {
                 setFilmFavInd(filmFavInd + 1);
                 setFilmFavData(favFilmArr[filmFavInd + 1])
               }}>Next
-     </button>
-              : null}
+              </button> :  
+              null } 
     </div>
         <div className={style.insideContent}>
             <div className={style.imgModal} >
