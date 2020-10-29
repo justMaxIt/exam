@@ -17,5 +17,6 @@ li {
 li img:hover {
   opacity: 0.85;
   cursor: pointer;
-  list-style-type: none
+  list-style-type: none; 
+  
 }

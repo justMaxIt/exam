@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import Menu from "../menu/Menu";
 import style from "./Modal.module.css"
+import {AiOutlineLeftCircle, AiOutlineRightCircle} from "react-icons/ai"
 
 
 function ModalDesktop(props) {
@@ -41,7 +42,8 @@ return ( <div>
             }
             else { setIsVisable(false) }
           }
-          }>Back to list</button>
+          }>
+        <div className={style.topButtonsButInside}><AiOutlineLeftCircle />Back to list</div></button>
         
           <button onClick={(e) => {
             if (filmIndex <= 18) {
@@ -62,7 +64,7 @@ return ( <div>
               e.target.style.visibility = 'hidden'
             }
             // console.log(data, filmData, filmIndex)
-          }}>Next Movie</button>
+          }}><div className={style.topButtonsButInside}> Next Movie<AiOutlineRightCircle /></div></button>
         </div>
         <div className={style.insideContent}>
           <div className={style.imgModal}>

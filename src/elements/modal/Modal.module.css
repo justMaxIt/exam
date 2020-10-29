@@ -26,7 +26,7 @@
 .topButtons {
   display: flex;
   flex-direction: row;
-  padding: 0 30px;
+  padding: 0 20px;
   padding-top: 15px;
   justify-content: space-between;
 }
@@ -40,6 +40,15 @@
 
 .topButtons button:focus {
   outline: none;
+}
+
+.topButtonsButInside {
+  padding: 0;
+  width: 170px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .insideContent {
@@ -107,7 +116,6 @@
   margin-right: 0;
   padding: 3% 0;
   font-size: medium;
-
 }
 
 .textMobile {
@@ -139,21 +147,21 @@
     margin-top: 0;
     padding: 0;
   }
-    .buttonAddToFavorite {
-      padding: 0;
-      padding-left: 20px;
-    }
-    .buttonAddToFavorite button {
-      color: #fff;
-      border: 2px solid #fff;
-    }
-    .scoreRatingRelease {
-      display: block;
-    }
-    .scoreRatingRelease div {
-      padding: 0
-    }
-    .descriptionFilm {
-      margin-left: 0;
-    }
+  .buttonAddToFavorite {
+    padding: 0;
+    padding-left: 20px;
   }
+  .buttonAddToFavorite button {
+    color: #fff;
+    border: 2px solid #fff;
+  }
+  .scoreRatingRelease {
+    display: block;
+  }
+  .scoreRatingRelease div {
+    padding: 0
+  }
+  .descriptionFilm {
+    margin-left: 0;
+  }
+}

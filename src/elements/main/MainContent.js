@@ -46,7 +46,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
           <ul className={style.postersContent}>
             {props.data.results?.map((el, ind) =>
               (<li key={el.id} >
-                <img src={posterUrl + el.poster_path} alt={`Title: ${el.title}`} onClick={() => funcOnPost(el, ind)} /></li>))}
+                <img src={posterUrl + el.poster_path}  alt={`Title: ${el.title}`} onClick={() => funcOnPost(el, ind)} /></li>))}
           </ul>
         </div>
       

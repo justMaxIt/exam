@@ -2,7 +2,7 @@ import React from "react";
 import style from "./../modal/Modal.module.css"
 import { useViewport } from "./../modal/Modal"
 import Menu from "../menu/Menu";
-
+import {AiOutlineLeftCircle, AiOutlineRightCircle} from "react-icons/ai"
 
   
 const posterUrl = "http://image.tmdb.org/t/p/w200"
@@ -64,15 +64,14 @@ const ModalFav = (props) => {
             <button onClick={() => {
               setOpenFavModal(false)
               setFilmFavData(null)
-            }}>Back</button>
+            }}><div className={style.topButtonsButInside}><AiOutlineLeftCircle />Back to list</div></button>
 
             {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ?
               <button onClick={() => {
                 setFilmFavInd(filmFavInd + 1);
                 setFilmFavData(favFilmArr[filmFavInd + 1])
-              }}>Next
-              </button> :  
-              null } 
+              }}> <div className={style.topButtonsButInside}> Next Movie<AiOutlineRightCircle /></div> </button>
+              : null } 
     </div>
         <div className={style.insideContent}>
             <div className={style.imgModal} >
