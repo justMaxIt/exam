@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { GrStar } from "react-icons/gr"
 import style from "./Modal.module.css"
 
 function ModalMobile(props) {
@@ -37,7 +39,7 @@ return ( <div>
             setIsVisable(false) }
           else { setIsVisable(false) }
         }
-        }>Back</button>
+        }><div className={style.topButtonsButInside}><FaChevronLeft />  Back</div></button>
         
         <button onClick={(e) => {
             if (filmIndex <= 18) {
@@ -57,7 +59,7 @@ return ( <div>
          setFilmData(data.results[filmIndex]);
          e.target.style.visibility = 'hidden'
 }
-          }}>Next</button>
+          }}><div className={style.topButtonsButInside}>Next  <FaChevronRight /></div></button>
           
       </div>
       
@@ -69,7 +71,7 @@ return ( <div>
           <button onClick={() => {
             setCondition(true)}}
               
-          >ICON</button>
+          ><GrStar size="2.5em"/></button>
         </div> : null}
 
       

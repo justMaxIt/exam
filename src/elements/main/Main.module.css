@@ -40,12 +40,12 @@
   display: flex;
   justify-content: center;
 }
-.pageBackgroundFav {
-   height: 100%;
-   min-height: 100vh;
-background-color: #F2F3F5;
 
-} 
+.pageBackgroundFav {
+  height: 100%;
+  min-height: 100vh;
+  background-color: #F2F3F5;
+}
 
 .favData {
   margin: 0;
@@ -91,13 +91,15 @@ background-color: #F2F3F5;
 
 @media (max-width: 620px) {
   .postersContent {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding-left: 10px;
   }
   .postersContent img {
     width: 150px;
   }
   .articleContent {
     padding-top: 15px;
+    padding-left: 15px;
   }
   .favData {
     display: block;

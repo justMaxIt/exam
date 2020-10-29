@@ -2,7 +2,8 @@ import React from "react";
 import style from "./../modal/Modal.module.css"
 import { useViewport } from "./../modal/Modal"
 import Menu from "../menu/Menu";
-import {AiOutlineLeftCircle, AiOutlineRightCircle} from "react-icons/ai"
+import { AiOutlineLeftCircle, AiOutlineRightCircle } from "react-icons/ai"
+import {FaChevronLeft, FaChevronRight} from "react-icons/fa"
 
   
 const posterUrl = "http://image.tmdb.org/t/p/w200"
@@ -29,12 +30,12 @@ const ModalFav = (props) => {
             <button onClick={() => {
               setOpenFavModal(false)
               setFilmFavData(null)
-             }}>Back</button>
+             }}><div className={style.topButtonsButInside}><FaChevronLeft />Back</div></button>
            {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ?
               <button onClick={() => {
                 setFilmFavInd(filmFavInd + 1);
                 setFilmFavData(favFilmArr[filmFavInd + 1])
-              }}>Next
+              }}><div className={style.topButtonsButInside}>Next<FaChevronRight /></div>
               </button> :  
               null } 
     </div>
