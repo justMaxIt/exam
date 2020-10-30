@@ -1,32 +1,30 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import ModalDesktop from "./ModalDesktop";
 import ModalMobile from "./ModalMobile";
-import style from "./Modal.module.css"
 
-  export const useViewport = () => {
-const [width, setWidth] = useState(window.innerWidth);
-    useEffect(() => {
+export const useViewport = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
     return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
-  return { width };}
+  return { width };
+};
 
 const Modal = (props) => {
   const { width } = useViewport();
   const breakpoint = 620;
- 
-  return (<div>
-       
-    {width < breakpoint ?
-      <ModalMobile
-       state={props.state}
-      /> :
-      <ModalDesktop
-      state={props.state}
-      />}
-  </div>
-   );
-}
+
+  return (
+    <div>
+      {width < breakpoint ? (
+        <ModalMobile state={props.state} />
+      ) : (
+        <ModalDesktop state={props.state} />
+      )}
+    </div>
+  );
+};
 
 export default Modal;

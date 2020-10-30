@@ -1,8 +1,3 @@
-/* .modal{
-  background-color: aquamarine;
-
-} */
-
 .backgroundImage {
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,11 +8,11 @@
   top: 0;
   bottom: 0;
   position: fixed;
-  -webkit-filter: blur(12px);
-  -moz-filter: blur(12px);
-  -o-filter: blur(12px);
-  -ms-filter: blur(12px);
-  filter: blur(12px);
+  -webkit-filter: blur(8px);
+  -moz-filter: blur(8px);
+  -o-filter: blur(8px);
+  -ms-filter: blur(8px);
+  filter: blur(8px);
   z-index: -1;
 }
 
