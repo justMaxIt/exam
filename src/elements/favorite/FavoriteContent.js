@@ -18,7 +18,6 @@ function FavoriteContent(props) {
     return setOpenFavModal(true), setFilmFavData(el), setFilmFavInd(ind);
   };
 
-  //  console.log(filmFavData)
   return (
     <div>
       {openFavModal ? (

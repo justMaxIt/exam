@@ -23,8 +23,10 @@ function ModalMobile(props) {
   } = props.state;
   const [condition, setCondition] = useState(false);
 
-  let addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
-
+  const addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
+  const cond =
+    data.results?.[data.results.length - 1].id === filmData.id &&
+    activePage === data.total_pages;
   const newDate = new Date(Date.parse(filmData.release_date));
   const year = newDate.getFullYear();
   function convertDate(date) {
@@ -88,32 +90,28 @@ function ModalMobile(props) {
               <FaChevronLeft /> Back
             </div>
           </button>
-
-          <button
-            onClick={(e) => {
-              if (filmIndex <= 18) {
-                setFilmIndex(filmIndex + 1);
-                setFilmData(data.results[filmIndex + 1]);
-              }
-              if (filmIndex === 18) {
-                setPage(page + 1);
-              }
-              if (filmIndex === 19) {
-                setFilmIndex(0);
-                setFilmData(data.results[0]);
-                setActivePage(activePage + 1);
-              }
-              if (data.results[data.results.length - 1] === filmData) {
-                setFilmIndex(filmIndex);
-                setFilmData(data.results[filmIndex]);
-                e.target.style.visibility = "hidden";
-              }
-            }}
-          >
-            <div className={style.topButtonsButInside}>
-              Next <FaChevronRight />
-            </div>
-          </button>
+          {!cond ? (
+            <button
+              onClick={(e) => {
+                if (filmIndex <= 18) {
+                  setFilmIndex(filmIndex + 1);
+                  setFilmData(data.results[filmIndex + 1]);
+                }
+                if (filmIndex === 18) {
+                  setPage(page + 1);
+                }
+                if (filmIndex === 19) {
+                  setFilmIndex(0);
+                  setFilmData(data.results[0]);
+                  setActivePage(activePage + 1);
+                }
+              }}
+            >
+              <div className={style.topButtonsButInside}>
+                Next <FaChevronRight />
+              </div>
+            </button>
+          ) : null}
         </div>
 
         <div className={style.insideContent}>
