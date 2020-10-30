@@ -116,6 +116,11 @@
   margin-right: 6%;
 }
 
+.favImg .noPoster {
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px 0px #5D686D;
+}
+
 .favBox {
   width: 100%;
   margin-right: 10px;
@@ -138,8 +143,14 @@
   background: none;
   font-size: 18px;
   font-weight: 600;
-  border: 2px solid #989BA1;
-  border-radius: 5px;
+  border: 1.5px solid #989BA1;
+  border-radius: 6px;
+}
+
+.favBoxButton button:hover {
+  background-color: #6C757D;
+  border-radius: 6px;
+  color: #F2F3F5;
 }
 
 .favBoxDescription {
@@ -165,16 +176,21 @@
     padding-left: 15px;
   }
   .favData {
-    display: block;
     padding: 10px 30px;
     min-height: 245px;
-  }
-  .favImg img {
-    width: 150px;
+    display: block;
   }
   .favImg {
     margin-bottom: 3%;
     float: left;
+  }
+  .favImg img {
+    width: 150px;
+    float: left;
+  }
+  .favImg .noPoster {
+    width: 150px;
+    height: 225px;
   }
   .favBox {
     display: block;

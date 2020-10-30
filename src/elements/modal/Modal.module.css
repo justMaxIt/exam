@@ -32,7 +32,7 @@
 }
 
 .topButtons button {
-  padding: 0;
+  padding: 0 5px;
   color: #989BA1;
   border: none;
   background: none;
@@ -41,6 +41,11 @@
 
 .topButtons button:focus {
   outline: none;
+}
+
+.topButtons button:hover {
+  background-color: #474D59;
+  border-radius: 6px;
 }
 
 .topButtonsButInside {
@@ -86,6 +91,11 @@
 
 .buttonAddToFavorite button:focus {
   outline: none;
+}
+
+.buttonAddToFavorite button:hover {
+  background-color: #474D59;
+  border-radius: 6px;
 }
 
 .titleFilm {
@@ -152,7 +162,6 @@
   }
   .buttonAddToFavorite {
     padding: 0 10px;
-    
   }
   .buttonAddToFavorite button {
     padding: 0;
