@@ -3,6 +3,7 @@ import style from "./Main.module.css"
 import Pagination from "react-js-pagination";
 import Modal from "../modal/Modal";
 import Menu from "../menu/Menu";
+// import noPoster from "./noPoster.png"
 
 
 const posterUrl = "http://image.tmdb.org/t/p/w200"
@@ -12,7 +13,7 @@ function MainContent(props) {
 const {setPage, activePage, setActivePage, data, page, 
 setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
  
-
+// const [showTitle, setShowTitle] = useState(false);
   // console.log(data)
 
   
@@ -46,7 +47,17 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
           <ul className={style.postersContent}>
             {props.data.results?.map((el, ind) =>
               (<li key={el.id} >
-                <img src={posterUrl + el.poster_path}  alt={`Title: ${el.title}`} onClick={() => funcOnPost(el, ind)} /></li>))}
+                {el.poster_path ? <div className={style.wrapPost} onClick={() => funcOnPost(el, ind)}> <img src={posterUrl + el.poster_path} alt="img" />
+                  <span>{el.title}</span>
+                </div>
+                  :
+                  <div className={style.noPoster}><span>{el.title}</span></div>
+
+                //   <img src={noPoster} title={el.title} alt="no poster" onClick={() => funcOnPost(el, ind)}
+                //                       onMouseEnter={() => console.log("hello")}
+                //     onMouseLeave={() => console.log("by")}
+                //  /> 
+                }</li>))}
           </ul>
         </div>
       

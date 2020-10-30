@@ -21,19 +21,69 @@
   justify-content: center;
 }
 
-.postersContent img {
-  text-align: center;
+.wrapPost {
+  position: relative;
+}
+
+.wrapPost span {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 12px 12px 12px #000000;
+  font-size: 1.5rem;
+  opacity: 0;
+}
+
+.wrapPost span:hover {
+  opacity: 1;
+  background-color: rgb(0, 0, 0, 0.7);
+  cursor: pointer;
+}
+
+.postersContent img {
+  text-align: center;
   width: 200px;
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0px 0px 6px 3px #5D686D;
+  /* font-size: 1.5em;
+  font-weight: 700;
+  color: #474D59; */
+}
+
+.noPoster {
+  background-image: url("./noPoster.png");
+  background-size: 100%;
+  width: 200px;
+  height: 300px;
+  text-align: center;
   border-radius: 6px;
   box-shadow: 0px 0px 6px 3px #5D686D;
 }
+
+/* .postersContent li img:hover {
+ opacity: 0.1
+} */
+
+/* .postersContent li {
+  position: relative
+} */
 
 .postersContent li {
   display: flex;
   justify-content: center;
 }
+
+/* 
+.postersContent li img {
+opacity: 0
+}  */
 
 .pagination {
   margin-top: 30px;
@@ -96,6 +146,10 @@
   }
   .postersContent img {
     width: 150px;
+  }
+  .postersContent .noPoster {
+    width: 150px;
+    height: 225px;
   }
   .articleContent {
     padding-top: 15px;

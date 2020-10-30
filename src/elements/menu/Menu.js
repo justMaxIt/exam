@@ -27,27 +27,6 @@ function Menu() {
     </div>
     </div>
   </div>)
-  // let location = useLocation();
-
-  // return (
-  //   <div className="menu">
-  //     <Link className={location.pathname === "/" ? "active" : ""} to="/">
-  //       Main
-  //     </Link>
-      /* <Link
-        className={location.pathname === "/modal" ? "active" : ""}
-        to="/modal"
-      >
-        Modal
-      </Link>
-      <Link
-        className={location.pathname === "/favorite" ? "active" : ""}
-        to="/favorite"
-      >
-        Favorite
-      </Link> */
-   
- 
 }
 
 export default Menu;
