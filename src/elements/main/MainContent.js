@@ -29,7 +29,7 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
 
   if (isVisable) {
       return (
-      <div className={style.modal}>
+      <div>
         <Modal
         state={props}
       /> </div>)
@@ -48,15 +48,10 @@ setFilmData, isVisable, setIsVisable,  setFilmIndex} = props
             {props.data.results?.map((el, ind) =>
               (<li key={el.id} >
                 {el.poster_path ? <div className={style.wrapPost} onClick={() => funcOnPost(el, ind)}> <img src={posterUrl + el.poster_path} alt="img" />
-                  <span>{el.title}</span>
+                <span>{el.title}</span>
                 </div>
                   :
-                  <div className={style.noPoster}><span>{el.title}</span></div>
-
-                //   <img src={noPoster} title={el.title} alt="no poster" onClick={() => funcOnPost(el, ind)}
-                //                       onMouseEnter={() => console.log("hello")}
-                //     onMouseLeave={() => console.log("by")}
-                //  /> 
+                  <div className={style.noPoster}onClick={() => funcOnPost(el, ind)}><span>{el.title}</span></div>
                 }</li>))}
           </ul>
         </div>

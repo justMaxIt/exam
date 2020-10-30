@@ -5,6 +5,11 @@
   height: 100%;
 }
 
+/* .modal {
+  background-color: aquamarine;
+  z-index: -2222;
+} */
+
 .articleContent {
   padding-left: 30px;
   padding-top: 30px;
@@ -23,7 +28,7 @@
 
 .wrapPost {
   position: relative;
-  }
+}
 
 .wrapPost span {
   position: absolute;

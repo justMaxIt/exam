@@ -1,23 +1,24 @@
 import React, {useState, useEffect} from "react";
 import Menu from "../menu/Menu";
 import style from "./Modal.module.css"
-import {AiOutlineLeftCircle, AiOutlineRightCircle} from "react-icons/ai"
+import { AiOutlineLeftCircle, AiOutlineRightCircle } from "react-icons/ai"
+import noPoster from "./noPoster.png"
 
 
 function ModalDesktop(props) {
-const posterUrl = "http://image.tmdb.org/t/p/w200"
-const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
+  const posterUrl = "http://image.tmdb.org/t/p/w200"
+  const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavFilmArr,
     data, filmData, filmIndex, page, activePage, favFilmArr } = props.state;
-  const [condition, setCondition] = useState(false)  
+  const [condition, setCondition] = useState(false)
 
   let addedFilm = favFilmArr.find(el => (filmData?.id === el.id))
 
   const newDate = new Date(Date.parse(filmData.release_date))
   const year = newDate.getFullYear()
   function convertDate(date) {
-  let months = ['January', 'February', 'March', 'April', 'May', 'June',
-                'Jule', 'August', 'September', 'October', 'November', 'December'];
-  return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
+    let months = ['January', 'February', 'March', 'April', 'May', 'June',
+      'Jule', 'August', 'September', 'October', 'November', 'December'];
+    return months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
   }
 
   useEffect(() => {
@@ -26,13 +27,18 @@ const { setIsVisable, setFilmData, setFilmIndex, setActivePage, setPage, setFavF
       setFavFilmArr(favFilmArr);
       localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
       style.visibility = 'hidden';
-      setCondition(false)}
-    }, [condition, favFilmArr, filmData, setFavFilmArr]);
+      setCondition(false)
+    }
+  }, [condition, favFilmArr, filmData, setFavFilmArr]);
   
   
-return ( <div>
-      <Menu />
+  return (<div className={style.modal} >
+    <Menu />
+    {filmData.poster_path ?
       <div className={style.backgroundImage} style={{ backgroundImage: `url(${posterUrl + filmData.poster_path})` }}></div>
+      : 
+      <div className={style.backgroundImage} style={{ backgroundImage: `url(${noPoster})` }}></div>
+    }
       <div className={style.modContent}>
       <div className={style.topButtons}>
           <button onClick={() => {
