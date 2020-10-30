@@ -5,7 +5,8 @@ html {
 body {
   min-height: 100%;
 }
-ul{
+
+ul {
   margin: 0;
   padding: 0;
 }
@@ -15,10 +16,7 @@ li {
 }
 
 li img:hover {
-  opacity: 0.85;
+  opacity: 0.8;
   cursor: pointer;
   list-style-type: none;
-   
-
-  
 }
