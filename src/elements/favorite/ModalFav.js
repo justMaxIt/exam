@@ -20,6 +20,7 @@ const ModalFav = (props) => {
   } = props.state;
   const { width } = useViewport();
   const breakpoint = 620;
+  const showNextBut = favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id;
   const newDate = new Date(Date.parse(filmFavData.release_date));
   const year = newDate.getFullYear();
   function convertDate(date) {
@@ -72,7 +73,7 @@ const ModalFav = (props) => {
                   Back
                 </div>
               </button>
-              {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ? (
+              {showNextBut ? (
                 <button
                   onClick={() => {
                     setFilmFavInd(filmFavInd + 1);
@@ -149,8 +150,7 @@ const ModalFav = (props) => {
                   Back to list
                 </div>
               </button>
-
-              {favFilmArr?.[favFilmArr.length - 1].id !== filmFavData.id ? (
+              {showNextBut ? (
                 <button
                   onClick={() => {
                     setFilmFavInd(filmFavInd + 1);
