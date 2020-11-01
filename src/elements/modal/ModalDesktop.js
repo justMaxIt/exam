@@ -20,34 +20,12 @@ function ModalDesktop(props) {
     activePage,
     favFilmArr,
   } = props.state;
-  const setCondition = props.setCondition;
+  const { setCondition, year, date } = props;
 
   const addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
   const cond =
     data.results?.[data.results.length - 1].id === filmData.id &&
     activePage === data.total_pages;
-
-  const newDate = new Date(Date.parse(filmData.release_date));
-  const year = newDate.getFullYear();
-  function convertDate(date) {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "Jule",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return (
-      months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
-    );
-  }
 
   return (
     <div>
@@ -138,7 +116,7 @@ function ModalDesktop(props) {
               <div className={style.rating}>
                 Rating: {filmData.adult === true ? "R" : "Pg"}
               </div>
-              <div>Release Date: {convertDate(newDate)}</div>
+              <div>Release Date: {date}</div>
             </div>
             <div className={style.descriptionFilm}>{filmData.overview}</div>
           </div>

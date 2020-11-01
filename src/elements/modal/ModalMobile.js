@@ -20,44 +20,12 @@ function ModalMobile(props) {
     activePage,
     favFilmArr,
   } = props.state;
-  const setCondition = props.setCondition;
+  const { setCondition, year, date } = props;
 
   const addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
   const cond =
     data.results?.[data.results.length - 1].id === filmData.id &&
     activePage === data.total_pages;
-
-  const newDate = new Date(Date.parse(filmData.release_date));
-  const year = newDate.getFullYear();
-  function convertDate(date) {
-    let months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "Jule",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    return (
-      months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
-    );
-  }
-
-  // useEffect(() => {
-  //   if (condition === true) {
-  //     favFilmArr.push(filmData);
-  //     setFavFilmArr(favFilmArr);
-  //     localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
-  //     style.visibility = "hidden";
-  //     setCondition(false);
-  //   }
-  // }, [condition, favFilmArr, filmData, setFavFilmArr]);
 
   return (
     <div>
@@ -144,7 +112,7 @@ function ModalMobile(props) {
               {filmData.adult === true ? "R" : "Pg"}
             </div>
             <div>Release Date:</div>{" "}
-            <div className={style.textMobile}>{convertDate(newDate)}</div>
+            <div className={style.textMobile}>{date}</div>
           </div>
           <div className={style.titleFilm}>{filmData.title + ` (${year})`}</div>
           <div className={style.descriptionFilm}>{filmData.overview}</div>

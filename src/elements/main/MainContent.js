@@ -29,7 +29,6 @@ function MainContent(props) {
       setFilmIndex(ind);
     }
   };
-  console.log(data);
   if (isVisable) {
     return (
       <div>
