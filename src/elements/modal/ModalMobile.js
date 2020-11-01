@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { GrStar } from "react-icons/gr";
 import style from "./Modal.module.css";
@@ -13,7 +13,6 @@ function ModalMobile(props) {
     setFilmIndex,
     setActivePage,
     setPage,
-    setFavFilmArr,
     data,
     filmData,
     filmIndex,
@@ -21,12 +20,13 @@ function ModalMobile(props) {
     activePage,
     favFilmArr,
   } = props.state;
-  const [condition, setCondition] = useState(false);
+  const setCondition = props.setCondition;
 
   const addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
   const cond =
     data.results?.[data.results.length - 1].id === filmData.id &&
     activePage === data.total_pages;
+
   const newDate = new Date(Date.parse(filmData.release_date));
   const year = newDate.getFullYear();
   function convertDate(date) {
@@ -49,15 +49,15 @@ function ModalMobile(props) {
     );
   }
 
-  useEffect(() => {
-    if (condition === true) {
-      favFilmArr.push(filmData);
-      setFavFilmArr(favFilmArr);
-      localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
-      style.visibility = "hidden";
-      setCondition(false);
-    }
-  }, [condition, favFilmArr, filmData, setFavFilmArr]);
+  // useEffect(() => {
+  //   if (condition === true) {
+  //     favFilmArr.push(filmData);
+  //     setFavFilmArr(favFilmArr);
+  //     localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
+  //     style.visibility = "hidden";
+  //     setCondition(false);
+  //   }
+  // }, [condition, favFilmArr, filmData, setFavFilmArr]);
 
   return (
     <div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Menu from "../menu/Menu";
 import style from "./Modal.module.css";
 import { AiOutlineLeftCircle, AiOutlineRightCircle } from "react-icons/ai";
@@ -13,7 +13,6 @@ function ModalDesktop(props) {
     setFilmIndex,
     setActivePage,
     setPage,
-    setFavFilmArr,
     data,
     filmData,
     filmIndex,
@@ -21,7 +20,7 @@ function ModalDesktop(props) {
     activePage,
     favFilmArr,
   } = props.state;
-  const [condition, setCondition] = useState(false);
+  const setCondition = props.setCondition;
 
   const addedFilm = favFilmArr.find((el) => filmData?.id === el.id);
   const cond =
@@ -49,16 +48,6 @@ function ModalDesktop(props) {
       months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear()
     );
   }
-
-  useEffect(() => {
-    if (condition) {
-      favFilmArr.push(filmData);
-      setFavFilmArr(favFilmArr);
-      localStorage.setItem("Favorite Data", JSON.stringify(favFilmArr));
-      style.visibility = "hidden";
-      setCondition(false);
-    }
-  }, [condition, favFilmArr, filmData, setFavFilmArr]);
 
   return (
     <div>
