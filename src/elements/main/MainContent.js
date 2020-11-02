@@ -32,7 +32,7 @@ function MainContent(props) {
   if (isVisable) {
     return (
       <div>
-        <Modal state={props} />{" "}
+        <Modal state={props} />
       </div>
     );
   } else {
