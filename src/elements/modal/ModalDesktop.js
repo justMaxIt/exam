@@ -47,7 +47,7 @@ function ModalDesktop(props) {
         <div className={style.topButtons}>
           <button
             onClick={() => {
-              if (filmIndex === 19) {
+              if (filmIndex === 19 && activePage !== data.total_pages) {
                 setPage(page - 1);
                 setIsVisable(false);
               } else {
@@ -67,7 +67,7 @@ function ModalDesktop(props) {
                   setFilmIndex(filmIndex + 1);
                   setFilmData(data.results[filmIndex + 1]);
                 }
-                if (filmIndex === 18) {
+                if (filmIndex === 18 && activePage !== data.total_pages) {
                   setPage(page + 1);
                 }
                 if (filmIndex === 19) {

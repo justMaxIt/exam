@@ -20,7 +20,7 @@ function MainContent(props) {
   } = props;
 
   let funcOnPost = (el, ind) => {
-    if (ind === 19) {
+    if (ind === 19 && activePage !== data.total_pages) {
       setPage(page + 1);
     }
     if (ind <= 19) {
