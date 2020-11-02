@@ -8,6 +8,9 @@ function App() {
   const [favFilmArr, setFavFilmArr] = useState([]);
 
   useEffect(() => {
+    if (JSON.parse(localStorage.getItem("Favorite Data")) === null) {
+      localStorage.setItem("Favorite Data", JSON.stringify([]));
+    }
     if (favFilmArr.length === 0) {
       setFavFilmArr(JSON.parse(localStorage.getItem("Favorite Data")));
     }
