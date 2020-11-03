@@ -14,8 +14,9 @@ function FavoriteContent(props) {
   } = props;
 
   let openModal = (el, ind) => {
-    // eslint-disable-next-line
-    return setOpenFavModal(true), setFilmFavData(el), setFilmFavInd(ind);
+    setOpenFavModal(true);
+    setFilmFavData(el);
+    setFilmFavInd(ind);
   };
 
   return (
