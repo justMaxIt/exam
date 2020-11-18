@@ -7,9 +7,14 @@ function Menu() {
   return (
     <div className={style.menu}>
       <div className={style.leftMenuItem}>
-        <img src={deathstar} alt="deathstar" />
-        <h5>Movies</h5>
+        <Link to="/" className={style.logoLink}>
+          <img src={deathstar} alt="deathstar" />
+        </Link>
+        <Link to="/" className={style.logoLink}>
+          <h5>Movies</h5>
+        </Link>
       </div>
+
       <div className={style.rightMenuItem}>
         <div class="btn-group">
           <button
